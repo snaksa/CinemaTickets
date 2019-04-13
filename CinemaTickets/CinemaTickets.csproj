@@ -59,6 +59,14 @@
     <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProjectionRepository.cs" />
+    <Compile Include="Models\Projection.cs" />
+    <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\MovieRepository.cs" />
+    <Compile Include="Models\TicketTypeRepository.cs" />
+    <Compile Include="Models\TicketType.cs" />
+    <Compile Include="Models\MovieType.cs" />
+    <Compile Include="Models\MovieTypeRepository.cs" />
     <Compile Include="Models\RoomRepository.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\GenreRepository.cs" />
