@@ -18,3 +18,11 @@ C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTick
 C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.csproj.CoreCompileInputs.cache
 C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.exe
 C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.pdb
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.Programa.resources
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\bin\Debug\Interop.ShockwaveFlashObjects.dll
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\Interop.ShockwaveFlashObjects.dll
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.csproj.ResolveComReference.cache
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.Forms.allMovies.resources
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.Forms.Movie.resources
