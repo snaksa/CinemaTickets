@@ -8,3 +8,13 @@ C:\Users\sinan\Documents\projects\CinemaTickets\CinemaTickets\obj\Debug\CinemaTi
 C:\Users\sinan\Documents\projects\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.exe
 C:\Users\sinan\Documents\projects\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.pdb
 C:\Users\sinan\Documents\projects\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.Forms.Main.resources
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\bin\Debug\CinemaTickets.exe.config
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\bin\Debug\CinemaTickets.exe
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\bin\Debug\CinemaTickets.pdb
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.csprojAssemblyReference.cache
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.Forms.Main.resources
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.Properties.Resources.resources
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.csproj.GenerateResource.cache
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.csproj.CoreCompileInputs.cache
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.exe
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.pdb

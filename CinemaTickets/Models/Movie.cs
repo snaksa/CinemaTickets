@@ -1,9 +1,13 @@
-﻿namespace CinemaTickets.Models
+﻿using System.Drawing;
+
+namespace CinemaTickets.Models
 {
     class Movie
+        
     {
         public Movie(
-            int id = 0, 
+            int id = 0,
+           // Image img = null,
             string title = "",
             string subtitle = "",
             string description = "",
@@ -12,8 +16,11 @@
             Genre genre = null,
             float duration = 0,
             string producer = "",
-            string actors = "")
+            string actors = ""
+           )
+        
         {
+           // this.img = img;
             this.Id = id;
             this.Title = title;
             this.Subtitle = subtitle;
@@ -26,6 +33,7 @@
             this.Actors = actors;
         }
 
+        //public Image img { get; set; }
         public int Id { get; set; }
         public string Title { get; set; }
         public string Subtitle { get; set; }
