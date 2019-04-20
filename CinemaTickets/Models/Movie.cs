@@ -7,7 +7,7 @@ namespace CinemaTickets.Models
     {
         public Movie(
             int id = 0,
-           // Image img = null,
+            string imgurl = "",
             string title = "",
             string subtitle = "",
             string description = "",
@@ -20,7 +20,7 @@ namespace CinemaTickets.Models
            )
         
         {
-           // this.img = img;
+            this.imgurl = imgurl;
             this.Id = id;
             this.Title = title;
             this.Subtitle = subtitle;
@@ -33,7 +33,7 @@ namespace CinemaTickets.Models
             this.Actors = actors;
         }
 
-        //public Image img { get; set; }
+        public string imgurl { get; set; }
         public int Id { get; set; }
         public string Title { get; set; }
         public string Subtitle { get; set; }

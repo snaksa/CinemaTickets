@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using CinemaTickets.Models;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -11,13 +10,11 @@ using System.Windows.Forms;
 
 namespace CinemaTickets.Forms
 {
-    public partial class s : Form
+    public partial class devLogIn : Form
     {
-        //List<Projection> projections;
-        public s()
+        public devLogIn()
         {
             InitializeComponent();
-            //projections = ProjectionRepository.GetAll();
         }
     }
 }

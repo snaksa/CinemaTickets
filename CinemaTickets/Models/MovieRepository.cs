@@ -17,7 +17,7 @@ namespace CinemaTickets.Models
             {
                 con.Open();
                 using (SqlCommand command = new SqlCommand(
-                    "SELECT m.id, m.title, m.subtitle, m.description, m.trailer_url," +
+                    "SELECT m.id,m.imgurl m.title, m.subtitle, m.description, m.trailer_url," +
                     "c.id, c.name, g.id, g.name, m.duration, m.producer, m.actors " +
                     "FROM movies m " +
                     "LEFT JOIN categories c ON c.id = m.category_id " +
@@ -32,21 +32,22 @@ namespace CinemaTickets.Models
                         {
                             return new Movie(
                                 reader.GetInt32(0), // id
-                                reader.GetString(1).Trim(), // title
-                                reader.GetString(2).Trim(), // subtitle
-                                reader.GetString(3).Trim(), // description
-                                reader.GetString(4).Trim(), // trailer_url
+                                reader.GetString(1).Trim(), // urlpicture
+                                reader.GetString(2).Trim(), // title
+                                reader.GetString(3).Trim(), // subtitle
+                                reader.GetString(4).Trim(), // description
+                                reader.GetString(5).Trim(), // trailer_url
                                 new Category(
-                                    reader.GetInt32(5), // category id
-                                    reader.GetString(6).Trim() // category name
+                                    reader.GetInt32(6), // category id
+                                    reader.GetString(7).Trim() // category name
                                 ),
                                 new Genre(
-                                    reader.GetInt32(7), // genre id
-                                    reader.GetString(8).Trim() // genre name
+                                    reader.GetInt32(8), // genre id
+                                    reader.GetString(9).Trim() // genre name
                                     ),
-                                reader.GetFloat(9), // duration
-                                reader.GetString(10).Trim(), // producer
-                                reader.GetString(11).Trim() // actors
+                                reader.GetFloat(10), // duration
+                                reader.GetString(11).Trim(), // producer
+                                reader.GetString(12).Trim() // actors
                             );
                         }
                     }
@@ -62,7 +63,7 @@ namespace CinemaTickets.Models
             {
                 con.Open();
                 using (SqlCommand command = new SqlCommand(
-                    "SELECT m.id, m.title, m.subtitle, m.description, m.trailer_url," +
+                    "SELECT m.id,m.imgurl, m.title, m.subtitle, m.description, m.trailer_url," +
                     "c.id, c.name, g.id, g.name, m.duration, m.producer, m.actors " +
                     "FROM movies m " +
                     "LEFT JOIN categories c ON c.id = m.category_id " +
@@ -70,25 +71,27 @@ namespace CinemaTickets.Models
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
+                        
                         while (reader.Read())
                         {
                             movies.Add(new Movie(
                                 reader.GetInt32(0), // id
-                                reader.GetString(1).Trim(), // title
-                                reader.GetString(2).Trim(), // subtitle
-                                reader.GetString(3).Trim(), // description
-                                reader.GetString(4).Trim(), // trailer_url
+                                reader.GetString(1).Trim(), // urlpicture
+                                reader.GetString(2).Trim(), // title
+                                reader.GetString(3).Trim(), // subtitle
+                                reader.GetString(4).Trim(), // description
+                                reader.GetString(5).Trim(), // trailer_url
                                 new Category(
-                                    reader.GetInt32(5), // category id
-                                    reader.GetString(6).Trim() // category name
+                                    reader.GetInt32(6), // category id
+                                    reader.GetString(7).Trim() // category name
                                 ),
                                 new Genre(
-                                    reader.GetInt32(7), // genre id
-                                    reader.GetString(8).Trim() // genre name
+                                    reader.GetInt32(8), // genre id
+                                    reader.GetString(9).Trim() // genre name
                                     ),
-                                reader.GetFloat(9), // duration
-                                reader.GetString(10).Trim(), // producer
-                                reader.GetString(11).Trim() // actors
+                                reader.GetFloat(10), // duration
+                                reader.GetString(11).Trim(), // producer
+                                reader.GetString(12).Trim() // actors
                             ));
                         }
                     }
@@ -98,18 +101,71 @@ namespace CinemaTickets.Models
             return movies;
         }
 
-        public static void Add(string title, string subtitle, string description, string trailerUrl,
+        public static List<Movie> GetLast6()
+        {
+            List<Movie> movies = new List<Movie>();
+            Movie mv = new Movie(0, "https://terrigen-cdn-dev.marvel.com/content/prod/1x/ow_character_1-sht_brie_v3_lg.jpg",
+                "Capt Marvel", "MarvelCaptain", "film", "bla bla", new Category(0, "ekshan"), new Genre(0, "dobare"), 430, "asen blatechki", "djonlevi");
+            movies.Add(mv);
+            movies.Add(mv);
+            movies.Add(mv);
+            /*
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand(
+                    "Select top(6) m.id,m.imgurl ,m.title,"+
+                    "from movies" +
+                    "order by ID desc"
+
+
+                    , con))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            movies.Add(new Movie(
+                                reader.GetInt32(0), // id
+                                reader.GetString(1).Trim(), // urlpicture
+                                reader.GetString(2).Trim(), // title
+                                reader.GetString(3).Trim(), // subtitle
+                                reader.GetString(4).Trim(), // description
+                                reader.GetString(5).Trim(), // trailer_url
+                                new Category(
+                                    reader.GetInt32(6), // category id
+                                    reader.GetString(7).Trim() // category name
+                                ),
+                                new Genre(
+                                    reader.GetInt32(8), // genre id
+                                    reader.GetString(9).Trim() // genre name
+                                    ),
+                                reader.GetFloat(10), // duration
+                                reader.GetString(11).Trim(), // producer
+                                reader.GetString(12).Trim() // actors
+                            ));
+                        }
+                    }
+                }
+            }
+            */
+            return movies;
+        }
+
+        public static void Add(string imgurl,string title, string subtitle, string description, string trailerUrl,
             int categoryId, int genreId, float duration, string producer, string actors)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
                 using (SqlCommand command = new SqlCommand(
-                    "INSERT INTO movies (title, subtitle, description, trailer_url, " +
+                    "INSERT INTO movies (imgurl,title, subtitle, description, trailer_url, " +
                     "category_id, genre_id, duration, producer, actors) " +
-                    "VALUES(@title, @subtitle, @descritpion, @trailer_url, " +
+                    "VALUES(@imgurl, @title, @subtitle, @descritpion, @trailer_url, " +
                     "@category_id, @genre_id, @duration, @producer, @actors)", con))
                 {
+                    command.Parameters.Add("@imgurl", SqlDbType.NVarChar);
+                    command.Parameters["@imgurl"].Value = imgurl;
                     command.Parameters.Add("@title", SqlDbType.NVarChar);
                     command.Parameters["@title"].Value = title;
                     command.Parameters.Add("@name", SqlDbType.NVarChar);
@@ -140,7 +196,7 @@ namespace CinemaTickets.Models
             {
                 con.Open();
                 using (SqlCommand command = new SqlCommand(
-                    "UPDATE movies SET title = @title, subtitle = @subtitle, " +
+                    "UPDATE movies SET imgurl=@imgurl title = @title, subtitle = @subtitle, " +
                     "description = @description, trailer_url = @trailer_url, " +
                     "category_id = @category_id, genre_id = @genre_id, duration = @duration, " +
                     "producer = @producer, actors = @actors) " +
@@ -148,6 +204,8 @@ namespace CinemaTickets.Models
                 {
                     command.Parameters.Add("@id", SqlDbType.Int);
                     command.Parameters["@id"].Value = movie.Id;
+                    command.Parameters.Add("@imgurl", SqlDbType.NVarChar);
+                    command.Parameters["@imgurl"].Value = movie.imgurl;
                     command.Parameters.Add("@title", SqlDbType.NVarChar);
                     command.Parameters["@title"].Value = movie.Title;
                     command.Parameters.Add("@name", SqlDbType.NVarChar);

@@ -18,7 +18,7 @@ namespace CinemaTickets.Models
             {
                 con.Open();
                 using (SqlCommand command = new SqlCommand(
-                    "SELECT p.id, m.id, m.title, m.subtitle, m.description, m.trailer_url," +
+                    "SELECT p.id, m.id,m.imgurl, m.title, m.subtitle, m.description, m.trailer_url," +
                     "c.id, c.name, g.id, g.name, m.duration, m.producer, m.actors " +
                     "t.id, t.name, t.price, r.id, r.name, p.time " +
                     "FROM projections p " +
@@ -39,25 +39,26 @@ namespace CinemaTickets.Models
                                 reader.GetInt32(0), //projection id
                                 new Movie(
                                     reader.GetInt32(1), // id
-                                    reader.GetString(2).Trim(), // title
-                                    reader.GetString(3).Trim(), // subtitle
-                                    reader.GetString(4).Trim(), // description
-                                    reader.GetString(5).Trim(), // trailer_url
+                                    reader.GetString(2).Trim(),
+                                    reader.GetString(3).Trim(), // title
+                                    reader.GetString(4).Trim(), // subtitle
+                                    reader.GetString(5).Trim(), // description
+                                    reader.GetString(6).Trim(), // trailer_url
                                     new Category(
-                                        reader.GetInt32(6), // category id
-                                        reader.GetString(7).Trim() // category name
+                                        reader.GetInt32(7), // category id
+                                        reader.GetString(8).Trim() // category name
                                     ),
                                     new Genre(
-                                        reader.GetInt32(8), // genre id
-                                        reader.GetString(9).Trim() // genre name
+                                        reader.GetInt32(9), // genre id
+                                        reader.GetString(10).Trim() // genre name
                                         ),
-                                    reader.GetFloat(10), // duration
-                                    reader.GetString(11).Trim(), // producer
-                                    reader.GetString(12).Trim() // actors
+                                    reader.GetFloat(11), // duration
+                                    reader.GetString(12).Trim(), // producer
+                                    reader.GetString(13).Trim() // actors
                                 ),
-                                new MovieType(reader.GetInt32(13), reader.GetString(14).Trim()),
-                                new Room(reader.GetInt32(15), reader.GetString(16).Trim()),
-                                reader.GetDateTime(17)
+                                new MovieType(reader.GetInt32(14), reader.GetString(15).Trim()),
+                                new Room(reader.GetInt32(16), reader.GetString(17).Trim()),
+                                reader.GetDateTime(18)
                             );
                         }
                     }
@@ -73,7 +74,7 @@ namespace CinemaTickets.Models
             {
                 con.Open();
                 using (SqlCommand command = new SqlCommand(
-                    "SELECT p.id, m.id, m.title, m.subtitle, m.description, m.trailer_url," +
+                    "SELECT p.id, m.id,m.imgurl, m.title, m.subtitle, m.description, m.trailer_url," +
                     "c.id, c.name, g.id, g.name, m.duration, m.producer, m.actors " +
                     "t.id, t.name, t.price, r.id, r.name, p.time " +
                     "FROM projections p " +
@@ -91,25 +92,26 @@ namespace CinemaTickets.Models
                                 reader.GetInt32(0), //projection id
                                 new Movie(
                                     reader.GetInt32(1), // id
-                                    reader.GetString(2).Trim(), // title
-                                    reader.GetString(3).Trim(), // subtitle
-                                    reader.GetString(4).Trim(), // description
-                                    reader.GetString(5).Trim(), // trailer_url
+                                    reader.GetString(2).Trim(),
+                                    reader.GetString(3).Trim(), // title
+                                    reader.GetString(4).Trim(), // subtitle
+                                    reader.GetString(5).Trim(), // description
+                                    reader.GetString(6).Trim(), // trailer_url
                                     new Category(
-                                        reader.GetInt32(6), // category id
-                                        reader.GetString(7).Trim() // category name
+                                        reader.GetInt32(7), // category id
+                                        reader.GetString(8).Trim() // category name
                                     ),
                                     new Genre(
-                                        reader.GetInt32(8), // genre id
-                                        reader.GetString(9).Trim() // genre name
+                                        reader.GetInt32(9), // genre id
+                                        reader.GetString(10).Trim() // genre name
                                         ),
-                                    reader.GetFloat(10), // duration
-                                    reader.GetString(11).Trim(), // producer
-                                    reader.GetString(12).Trim() // actors
+                                    reader.GetFloat(11), // duration
+                                    reader.GetString(12).Trim(), // producer
+                                    reader.GetString(13).Trim() // actors
                                 ),
-                                new MovieType(reader.GetInt32(13), reader.GetString(14).Trim()),
-                                new Room(reader.GetInt32(15), reader.GetString(16).Trim()),
-                                reader.GetDateTime(17)
+                                new MovieType(reader.GetInt32(14), reader.GetString(15).Trim()),
+                                new Room(reader.GetInt32(16), reader.GetString(17).Trim()),
+                                reader.GetDateTime(18)
                             ));
                         }
                     }

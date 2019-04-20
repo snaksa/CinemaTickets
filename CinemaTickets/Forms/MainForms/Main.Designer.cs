@@ -103,6 +103,7 @@
             this.movie1picture.Location = new System.Drawing.Point(12, 183);
             this.movie1picture.Name = "movie1picture";
             this.movie1picture.Size = new System.Drawing.Size(100, 165);
+            this.movie1picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.movie1picture.TabIndex = 7;
             this.movie1picture.TabStop = false;
             // 
@@ -111,6 +112,7 @@
             this.movie2picture.Location = new System.Drawing.Point(118, 183);
             this.movie2picture.Name = "movie2picture";
             this.movie2picture.Size = new System.Drawing.Size(100, 165);
+            this.movie2picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.movie2picture.TabIndex = 8;
             this.movie2picture.TabStop = false;
             // 
@@ -119,6 +121,7 @@
             this.movie3picture.Location = new System.Drawing.Point(224, 183);
             this.movie3picture.Name = "movie3picture";
             this.movie3picture.Size = new System.Drawing.Size(100, 165);
+            this.movie3picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.movie3picture.TabIndex = 9;
             this.movie3picture.TabStop = false;
             // 
@@ -127,6 +130,7 @@
             this.movie4picture.Location = new System.Drawing.Point(330, 183);
             this.movie4picture.Name = "movie4picture";
             this.movie4picture.Size = new System.Drawing.Size(100, 165);
+            this.movie4picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.movie4picture.TabIndex = 10;
             this.movie4picture.TabStop = false;
             // 
@@ -135,6 +139,7 @@
             this.movie5picture.Location = new System.Drawing.Point(436, 183);
             this.movie5picture.Name = "movie5picture";
             this.movie5picture.Size = new System.Drawing.Size(100, 165);
+            this.movie5picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.movie5picture.TabIndex = 11;
             this.movie5picture.TabStop = false;
             // 
@@ -143,6 +148,7 @@
             this.movie6picture.Location = new System.Drawing.Point(542, 183);
             this.movie6picture.Name = "movie6picture";
             this.movie6picture.Size = new System.Drawing.Size(100, 165);
+            this.movie6picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.movie6picture.TabIndex = 12;
             this.movie6picture.TabStop = false;
             // 

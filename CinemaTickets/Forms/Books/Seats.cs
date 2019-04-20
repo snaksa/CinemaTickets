@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CinemaTickets.Forms
 {
-    public partial class Form1 : Form
+    public partial class Seats : Form
     {
-        public Form1()
+        public Seats()
         {
             InitializeComponent();
         }

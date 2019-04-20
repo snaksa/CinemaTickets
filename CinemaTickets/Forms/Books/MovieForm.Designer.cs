@@ -1,6 +1,6 @@
 ﻿namespace CinemaTickets.Forms
 {
-    partial class Movie
+    partial class MovieForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Movie));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MovieForm));
             this.imgMovie = new System.Windows.Forms.PictureBox();
             this.description = new System.Windows.Forms.RichTextBox();
             this.length = new System.Windows.Forms.Label();

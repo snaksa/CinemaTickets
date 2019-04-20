@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace CinemaTickets.Forms
 {
-    public partial class Movie : Form
+    public partial class MovieForm : Form
     {
         private s bk;
-        public Movie()
+        public MovieForm()
         {
             InitializeComponent();
         }

@@ -47,23 +47,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\allMovies.cs">
+    <Compile Include="Forms\DeveloperForms\devLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\allMovies.Designer.cs">
+    <Compile Include="Forms\DeveloperForms\devLogIn.Designer.cs">
+      <DependentUpon>devLogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\АllMoviesForms\allMovies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\АllMoviesForms\allMovies.Designer.cs">
       <DependentUpon>allMovies.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Book.cs">
+    <Compile Include="Forms\Books\Book.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Book.Designer.cs">
+    <Compile Include="Forms\Books\Book.Designer.cs">
       <DependentUpon>Book.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Movie.cs">
+    <Compile Include="Forms\Books\Seats.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Movie.Designer.cs">
-      <DependentUpon>Movie.cs</DependentUpon>
+    <Compile Include="Forms\Books\Seats.Designer.cs">
+      <DependentUpon>Seats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeveloperForms\devAllMovies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeveloperForms\devAllMovies.Designer.cs">
+      <DependentUpon>devAllMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeveloperForms\devAllReservations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeveloperForms\devAllReservations.Designer.cs">
+      <DependentUpon>devAllReservations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Books\MovieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Books\MovieForm.Designer.cs">
+      <DependentUpon>MovieForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Programa.cs">
       <SubType>Form</SubType>
@@ -71,10 +95,10 @@
     <Compile Include="Programa.Designer.cs">
       <DependentUpon>Programa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Main.cs">
+    <Compile Include="Forms\MainForms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Main.Designer.cs">
+    <Compile Include="Forms\MainForms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ProjectionRepository.cs" />
@@ -93,14 +117,29 @@
     <Compile Include="Models\CategoryRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\allMovies.resx">
+    <EmbeddedResource Include="Forms\DeveloperForms\devLogIn.resx">
+      <DependentUpon>devLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\АllMoviesForms\allMovies.resx">
       <DependentUpon>allMovies.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Main.resx">
+    <EmbeddedResource Include="Forms\Books\Book.resx">
+      <DependentUpon>Book.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeveloperForms\devAllMovies.resx">
+      <DependentUpon>devAllMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeveloperForms\devAllReservations.resx">
+      <DependentUpon>devAllReservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Movie.resx">
-      <DependentUpon>Movie.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Books\MovieForm.resx">
+      <DependentUpon>MovieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Books\Seats.resx">
+      <DependentUpon>Seats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Programa.resx">
       <DependentUpon>Programa.cs</DependentUpon>
@@ -145,6 +184,10 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Recources\icons8-unavailable-filled-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

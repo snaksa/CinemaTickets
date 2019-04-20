@@ -25,4 +25,9 @@ C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\Interop.Sh
 C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
 C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.csproj.ResolveComReference.cache
 C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.Forms.allMovies.resources
-C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.Forms.Movie.resources
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.Forms.s.resources
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.Forms.devAllMovies.resources
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.Forms.DeveloperForms.devAllReservations.resources
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.Forms.Seats.resources
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.Forms.MovieForm.resources
+C:\Users\umruk\Documents\GitHub\CinemaTickets\CinemaTickets\obj\Debug\CinemaTickets.Forms.devLogIn.resources
