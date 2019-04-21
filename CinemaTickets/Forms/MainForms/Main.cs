@@ -1,15 +1,9 @@
 ﻿using System;
 using CinemaTickets.Models;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using CinemaTickets.Forms.MainForms;
 
 namespace CinemaTickets.Forms
 {
@@ -17,16 +11,30 @@ namespace CinemaTickets.Forms
     {
         private Programa prog;
         private allMovies allm;
-        List<Movie> movies;
+
+        List<Label> movieLabels;
+        List<Label> movieLabelsMore;
+        List<PictureBox> moviePictues;
+        List<Movie> allMovies;
+
         public Main()
         {
             InitializeComponent();
-            
+            movieLabels = new List<Label>();
+            movieLabelsMore = new List<Label>();
+            moviePictues = new List<PictureBox>();
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
-            this.get6Records();
+            this.setMovies(MovieRepository.GetAll(true));
+
+            List<Genre> genres = GenreRepository.GetAll();
+            comboBoxGenres.Items.Add(new GenreOption(0, "Всички"));
+            foreach (Genre genre in genres)
+            {
+                comboBoxGenres.Items.Add(new GenreOption(genre.Id, genre.Name));
+            }
 
         }
 
@@ -35,7 +43,7 @@ namespace CinemaTickets.Forms
             prog = new Programa();
             //prog.MdiParent = this;
             prog.Show();
-            
+
         }
 
         private void allmovies_Click(object sender, EventArgs e)
@@ -44,74 +52,101 @@ namespace CinemaTickets.Forms
             allm.Show();
         }
 
-        
-        private void get6Records()
+        private void comboBoxGenres_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ComboBox comboBox = (ComboBox)sender;
+            GenreOption genre = (GenreOption)comboBox.SelectedItem;
+            setMovies(MovieRepository.GetAll(true, genre.Id));
 
-            Image img = Image.FromFile("C:\\Users\\umruk\\Documents\\GitHub\\CinemaTickets\\CinemaTickets\\Recources\\icons8-unavailable-filled-50.png");
-            movies = MovieRepository.GetLast6();
+        }
 
-            if(movies[0].Title == "" )
-            {
-                movie1picture.Image = img;
-            } 
-            else
-            {
-                movie1picture.ImageLocation = movies[0].imgurl;
-                movie1name.Text = movies[0].Title;
-            }
+        private void setMovies(List<Movie> movies)
+        {
+            foreach (Label label in this.movieLabels)
+                this.Controls.Remove(label);
 
-            if (movies[1].Title == "")
-            {
-                movie2picture.Image = img;
-            }
-            else
-            {
-                movie2picture.ImageLocation = movies[1].imgurl;
-                movie2name.Text = movies[1].Title;
-            }
-
-            if (movies[2].Title == "")
-            {
-                movie3picture.Image = img;
-            }
-            else
-            {
-                movie3picture.ImageLocation = movies[2].imgurl;
-                movie3name.Text = movies[2].Title;
-            }
-
-            /*
-            if (movies[3].Title == "")
-            {
-                movie4picture.Image = img;
-            }
-            else
-            {
-                movie4picture.ImageLocation = movies[3].imgurl;
-                movie4name.Text = movies[3].Title;
-            }
+            foreach (PictureBox pb in this.moviePictues)
+                this.Controls.Remove(pb);
             
-            if (movies[4].Title == "")
-            {
-                movie5picture.Image = img;
-            }
-            else
-            {
-                movie5picture.ImageLocation = movies[4].imgurl;
-                movie5name.Text = movies[4].Title;
-            }
-            if (movies[5].Title == "")
-            {
-                movie6picture.Image = img;
-            }
-            else
-            {
-                movie6picture.ImageLocation = movies[5].imgurl;
-                movie6name.Text = movies[5].Title;
-            }
-            */
+            this.allMovies = movies;
 
+            for (int i = 0; i < movies.Count; i++)
+            {
+                //Label lb = new Label();
+                //lb.AutoSize = false;
+                //lb.Location = new System.Drawing.Point(16 + i * 150, 206);
+                //lb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+                //lb.Size = new System.Drawing.Size(46, 17);
+                //lb.TabIndex = 13;
+                //lb.Text = movies[i].Title;
+                //lb.Tag = i;
+                //lb.Cursor = Cursors.Hand;
+                //lb.Click += (object sender, EventArgs e) => this.handlePictureClick(sender, e);
+
+                PictureBox pb = new PictureBox();
+                pb.Location = new System.Drawing.Point(16 + i * 150, 225);
+                pb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+                pb.Size = new System.Drawing.Size(133, 203);
+                pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                pb.TabIndex = 7;
+                pb.TabStop = false;
+                pb.Image = Image.FromFile(@"Images\loader.gif");
+                pb.ImageLocation = movies[i].ImgUrl;
+                pb.BorderStyle = BorderStyle.FixedSingle;
+                pb.Cursor = Cursors.Hand;
+                pb.Tag = i;
+                pb.MouseEnter += (object sender, EventArgs e) => this.handlePictureHover(sender, e);
+                pb.MouseLeave += (object sender, EventArgs e) => this.handlePictureHover(sender, e);
+                pb.Click += (object sender, EventArgs e) => this.handlePictureClick(sender, e);
+
+                Label lbMore = new Label();
+                lbMore.AutoSize = false;
+                lbMore.Location = new System.Drawing.Point(35 + i * 150, 310);
+                lbMore.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
+                lbMore.Size = new System.Drawing.Size(98, 20);
+                lbMore.TabIndex = 13;
+                lbMore.Visible = false;
+                lbMore.Text = "Подробности";
+                lbMore.BorderStyle = BorderStyle.FixedSingle;
+                lbMore.Tag = i;
+                lbMore.Click += (object sender, EventArgs e) => this.handlePictureClick(sender, e);
+
+                //this.Controls.Add(lb);
+                this.Controls.Add(lbMore);
+                this.Controls.Add(pb);
+
+                //this.movieLabels.Add(lb);
+                this.movieLabelsMore.Add(lbMore);
+                this.moviePictues.Add(pb);
+            }
+        }
+
+        private void handlePictureHover(object sender, EventArgs e)
+        {
+            PictureBox pb = (PictureBox)sender;
+            Label lb = this.movieLabelsMore[Int32.Parse(pb.Tag.ToString())];
+            lb.Visible = !lb.Visible;
+        }
+
+        private void handlePictureClick(object sender, EventArgs e)
+        {
+            int index = 0;
+
+            if (sender is PictureBox)
+            {
+                PictureBox pb = (PictureBox)sender;
+                index = Int32.Parse(pb.Tag.ToString());
+            }
+            else
+            {
+                Label lb = (Label)sender;
+                index = Int32.Parse(lb.Tag.ToString());
+            }
+
+            int id = this.allMovies[index].Id;
+
+            SingleMovie sm = new SingleMovie(id);
+            sm.Show();
         }
     }
 }

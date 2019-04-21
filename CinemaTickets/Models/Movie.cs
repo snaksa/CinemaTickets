@@ -14,13 +14,13 @@ namespace CinemaTickets.Models
             string trailerUrl = "",
             Category category = null,
             Genre genre = null,
-            float duration = 0,
+            decimal duration = 0,
             string producer = "",
             string actors = ""
            )
         
         {
-            this.imgurl = imgurl;
+            this.ImgUrl = imgurl;
             this.Id = id;
             this.Title = title;
             this.Subtitle = subtitle;
@@ -33,7 +33,7 @@ namespace CinemaTickets.Models
             this.Actors = actors;
         }
 
-        public string imgurl { get; set; }
+        public string ImgUrl { get; set; }
         public int Id { get; set; }
         public string Title { get; set; }
         public string Subtitle { get; set; }
@@ -41,7 +41,7 @@ namespace CinemaTickets.Models
         public string TrailerUrl { get; set; }
         public Category Category { get; set; }
         public Genre Genre { get; set; }
-        public float Duration { get; set; }
+        public decimal Duration { get; set; }
         public string Producer { get; set; }
         public string Actors { get; set; }
     }
