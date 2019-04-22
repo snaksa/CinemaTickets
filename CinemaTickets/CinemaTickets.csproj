@@ -53,6 +53,24 @@
     <Compile Include="Forms\DeveloperForms\devLogIn.Designer.cs">
       <DependentUpon>devLogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DeveloperForms\devMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeveloperForms\devMenuForm.Designer.cs">
+      <DependentUpon>devMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeveloperForms\devSingleMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeveloperForms\devSingleMovie.Designer.cs">
+      <DependentUpon>devSingleMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForms\SingleMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForms\SingleMovie.Designer.cs">
+      <DependentUpon>SingleMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\АllMoviesForms\allMovies.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +107,7 @@
     <Compile Include="Forms\Books\MovieForm.Designer.cs">
       <DependentUpon>MovieForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\GenreOption.cs" />
     <Compile Include="Programa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +138,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\DeveloperForms\devLogIn.resx">
       <DependentUpon>devLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeveloperForms\devMenuForm.resx">
+      <DependentUpon>devMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeveloperForms\devSingleMovie.resx">
+      <DependentUpon>devSingleMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForms\SingleMovie.resx">
+      <DependentUpon>SingleMovie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\АllMoviesForms\allMovies.resx">
       <DependentUpon>allMovies.cs</DependentUpon>
@@ -187,6 +215,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Images\cooltext321919124763215.png" />
+    <Content Include="Images\Developerpng.png" />
+    <Content Include="Images\loader.gif" />
+    <Content Include="Images\logo.png" />
     <Content Include="Recources\icons8-unavailable-filled-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

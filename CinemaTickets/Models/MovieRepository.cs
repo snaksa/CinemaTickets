@@ -108,38 +108,29 @@ namespace CinemaTickets.Models
             return movies;
         }
 
-        public static void Add(string imgurl,string title, string subtitle, string description, string trailerUrl,
-            int categoryId, int genreId, float duration, string producer, string actors)
+        public static void Add(Movie m)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
                 using (SqlCommand command = new SqlCommand(
-                    "INSERT INTO movies (imgurl,title, subtitle, description, trailer_url, " +
-                    "category_id, genre_id, duration, producer, actors) " +
-                    "VALUES(@imgurl, @title, @subtitle, @descritpion, @trailer_url, " +
-                    "@category_id, @genre_id, @duration, @producer, @actors)", con))
+                    "INSERT INTO movies (title, subtitle, description, trailer_url, " +
+                    "category_id, genre_id, duration, producer, actors, imgurl) " +
+                    "VALUES(@title, @subtitle, @description, @trailer_url, " +
+                    "@category_id, @genre_id, @duration, @producer, @actors, @imgurl)", con))
                 {
-                    command.Parameters.Add("@imgurl", SqlDbType.NVarChar);
-                    command.Parameters["@imgurl"].Value = imgurl;
-                    command.Parameters.Add("@title", SqlDbType.NVarChar);
-                    command.Parameters["@title"].Value = title;
-                    command.Parameters.Add("@name", SqlDbType.NVarChar);
-                    command.Parameters["@subtitle"].Value = subtitle;
-                    command.Parameters.Add("@description", SqlDbType.NVarChar);
-                    command.Parameters["@description"].Value = description;
-                    command.Parameters.Add("@trailer_url", SqlDbType.NVarChar);
-                    command.Parameters["@trailer_url"].Value = trailerUrl;
-                    command.Parameters.Add("@category_id", SqlDbType.Int);
-                    command.Parameters["@category_id"].Value = categoryId;
-                    command.Parameters.Add("@genre_id", SqlDbType.Int);
-                    command.Parameters["@genre_id"].Value = genreId;
-                    command.Parameters.Add("@duration", SqlDbType.Float);
-                    command.Parameters["@duration"].Value = duration;
-                    command.Parameters.Add("@producer", SqlDbType.NVarChar);
-                    command.Parameters["@producer"].Value = producer;
-                    command.Parameters.Add("@actors", SqlDbType.NVarChar);
-                    command.Parameters["@actors"].Value = actors;
+
+                    
+                    command.Parameters.AddWithValue("@title", m.Title);
+                    command.Parameters.AddWithValue("@subtitle", m.Subtitle);
+                    command.Parameters.AddWithValue("@description", m.Description);
+                    command.Parameters.AddWithValue("@trailer_url", m.TrailerUrl);
+                    command.Parameters.AddWithValue("@category_id", m.Category.Id);
+                    command.Parameters.AddWithValue("@genre_id", m.Genre.Id);
+                    command.Parameters.AddWithValue("@duration", m.Duration);
+                    command.Parameters.AddWithValue("@producer", m.Producer);
+                    command.Parameters.AddWithValue("@actors", m.Actors);
+                    command.Parameters.AddWithValue("@imgurl", m.ImgUrl);
 
                     command.ExecuteNonQuery();
                 }

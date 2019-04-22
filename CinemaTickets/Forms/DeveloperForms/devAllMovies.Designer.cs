@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.s = new System.Windows.Forms.DataGridView();
+            this.dataGridAllMovies = new System.Windows.Forms.DataGridView();
             this.addMovie = new System.Windows.Forms.Button();
             this.editMovie = new System.Windows.Forms.Button();
             this.remMovie = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.s)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAllMovies)).BeginInit();
             this.SuspendLayout();
             // 
-            // s
+            // dataGridAllMovies
             // 
-            this.s.AllowUserToDeleteRows = false;
-            this.s.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.s.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.s.Location = new System.Drawing.Point(0, 95);
-            this.s.Name = "s";
-            this.s.ReadOnly = true;
-            this.s.Size = new System.Drawing.Size(878, 450);
-            this.s.TabIndex = 1;
+            this.dataGridAllMovies.AllowUserToDeleteRows = false;
+            this.dataGridAllMovies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridAllMovies.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridAllMovies.Location = new System.Drawing.Point(0, 95);
+            this.dataGridAllMovies.Name = "dataGridAllMovies";
+            this.dataGridAllMovies.ReadOnly = true;
+            this.dataGridAllMovies.Size = new System.Drawing.Size(878, 450);
+            this.dataGridAllMovies.TabIndex = 1;
+            this.dataGridAllMovies.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridAllMovies_CellFormatting);
             // 
             // addMovie
             // 
@@ -54,6 +55,7 @@
             this.addMovie.TabIndex = 2;
             this.addMovie.Text = "Добавяне на филм";
             this.addMovie.UseVisualStyleBackColor = true;
+            this.addMovie.Click += new System.EventHandler(this.addMovie_Click);
             // 
             // editMovie
             // 
@@ -63,6 +65,7 @@
             this.editMovie.TabIndex = 3;
             this.editMovie.Text = "Промяна на филм";
             this.editMovie.UseVisualStyleBackColor = true;
+            this.editMovie.Click += new System.EventHandler(this.editMovie_Click);
             // 
             // remMovie
             // 
@@ -72,6 +75,7 @@
             this.remMovie.TabIndex = 4;
             this.remMovie.Text = "Изтриване на филм";
             this.remMovie.UseVisualStyleBackColor = true;
+            this.remMovie.Click += new System.EventHandler(this.remMovie_Click);
             // 
             // devAllMovies
             // 
@@ -81,17 +85,17 @@
             this.Controls.Add(this.remMovie);
             this.Controls.Add(this.editMovie);
             this.Controls.Add(this.addMovie);
-            this.Controls.Add(this.s);
+            this.Controls.Add(this.dataGridAllMovies);
             this.Name = "devAllMovies";
             this.Text = "devAllMovies";
-            ((System.ComponentModel.ISupportInitialize)(this.s)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAllMovies)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView s;
+        private System.Windows.Forms.DataGridView dataGridAllMovies;
         private System.Windows.Forms.Button addMovie;
         private System.Windows.Forms.Button editMovie;
         private System.Windows.Forms.Button remMovie;

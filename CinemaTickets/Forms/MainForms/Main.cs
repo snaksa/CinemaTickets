@@ -9,6 +9,7 @@ namespace CinemaTickets.Forms
 {
     public partial class Main : Form
     {
+        private devLogIn dlogin;
         private Programa prog;
         private allMovies allm;
 
@@ -27,6 +28,7 @@ namespace CinemaTickets.Forms
 
         private void Main_Load(object sender, EventArgs e)
         {
+            
             this.setMovies(MovieRepository.GetAll(true));
 
             List<Genre> genres = GenreRepository.GetAll();
@@ -148,5 +150,18 @@ namespace CinemaTickets.Forms
             SingleMovie sm = new SingleMovie(id);
             sm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void devMode_Click(object sender, EventArgs e)
+        {
+
+            dlogin = new devLogIn();
+            dlogin.Show();
+
+        }
     }
-}
+    }

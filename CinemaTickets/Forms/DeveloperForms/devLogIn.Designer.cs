@@ -38,20 +38,20 @@
             // usnLabel
             // 
             this.usnLabel.AutoSize = true;
-            this.usnLabel.Location = new System.Drawing.Point(27, 100);
+            this.usnLabel.Location = new System.Drawing.Point(7, 103);
             this.usnLabel.Name = "usnLabel";
-            this.usnLabel.Size = new System.Drawing.Size(35, 13);
+            this.usnLabel.Size = new System.Drawing.Size(58, 13);
             this.usnLabel.TabIndex = 0;
-            this.usnLabel.Text = "label1";
+            this.usnLabel.Text = "Username:";
             // 
             // passLabel
             // 
             this.passLabel.AutoSize = true;
-            this.passLabel.Location = new System.Drawing.Point(27, 129);
+            this.passLabel.Location = new System.Drawing.Point(7, 132);
             this.passLabel.Name = "passLabel";
-            this.passLabel.Size = new System.Drawing.Size(35, 13);
+            this.passLabel.Size = new System.Drawing.Size(56, 13);
             this.passLabel.TabIndex = 1;
-            this.passLabel.Text = "label2";
+            this.passLabel.Text = "Password:";
             // 
             // username
             // 
@@ -73,14 +73,15 @@
             this.devLogInButton.Name = "devLogInButton";
             this.devLogInButton.Size = new System.Drawing.Size(75, 23);
             this.devLogInButton.TabIndex = 4;
-            this.devLogInButton.Text = "button1";
+            this.devLogInButton.Text = "Влизане";
             this.devLogInButton.UseVisualStyleBackColor = true;
+            this.devLogInButton.Click += new System.EventHandler(this.devLogInButton_Click);
             // 
             // devLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(231, 209);
+            this.ClientSize = new System.Drawing.Size(214, 212);
             this.Controls.Add(this.devLogInButton);
             this.Controls.Add(this.password);
             this.Controls.Add(this.username);
