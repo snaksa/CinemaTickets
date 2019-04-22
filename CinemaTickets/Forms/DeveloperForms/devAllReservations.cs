@@ -14,37 +14,72 @@ namespace CinemaTickets.Forms.DeveloperForms
 {
     public partial class devAllReservations : Form
     {
-        List<Movie> movies;
+
         public devAllReservations()
         {
+           
             InitializeComponent();
+            this.getRecords();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void OnFormClose(object sender, EventArgs e)
         {
-
+            this.getRecords();
         }
-        /*
+
         private void getRecords()
         {
-            using (SqlConnection con = new SqlConnection(CinemaTickets.connectionString))
+            using (SqlConnection con = new SqlConnection(MovieRepository.connectionString))
             {
                 con.Open();
-                using (SqlDataAdapter adapter = new SqlDataAdapter(
-                     "SELECT c.id as ID, c.regNumber as 'Рег. номер', b.name as 'Марка', m.name as 'Модел', "
-                    + "c.year as 'Година', c.engineNumber as 'Номер на двигател', c.frameNumber as 'Номер на рама', col.name as 'Цвят', c.engineVolume as 'Обем на двигателя', "
-                    + "c.description as 'Описание', c.ownerName as 'Собственик', c.contactNumber as 'Телефон' FROM cars c "
-                    + "LEFT JOIN models m ON m.id = c.modelId "
-                    + "LEFT JOIN brands b ON b.id = m.brandId "
-                    + "LEFT JOIN colors col ON col.id = c.colorId "
+
+                using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT p.id, m.imgurl, m.title," +
+                    "c.name, g.name, m.duration, " +
+                    "t.name, r.name, p.time " +
+                    "FROM projections p " +
+                    "LEFT JOIN movies m ON m.id = p.movie_id " +
+                    "LEFT JOIN movie_types t ON t.id = p.movie_type_id " +
+                    "LEFT JOIN rooms r ON r.id = p.room_id " +
+                    "LEFT JOIN categories c ON c.id = m.category_id " +
+                    "LEFT JOIN genres g ON g.id = m.genre_id "
                     , con))
                 {
-                    DataTable table = new DataTable();
-                    adapter.Fill(table);
-                    carsDataGridView.DataSource = table;
+                        DataTable table = new DataTable();
+                        adapter.Fill(table);
+
+                       
+                        reservationDataGrid.DataSource = table;
+                   
                 }
             }
         }
-        */
+
+        private void addReservation_Click(object sender, EventArgs e)
+        {
+            devSingleProjection form = new devSingleProjection();
+            form.FormClosed += new FormClosedEventHandler(this.OnFormClose);
+            form.Show();
+        }
+
+        private void editReservation_Click(object sender, EventArgs e)
+        {
+            int index = reservationDataGrid.SelectedCells.Count > 0 ? reservationDataGrid.SelectedCells[0].RowIndex : -1;
+            index = index != -1 ? Int32.Parse(reservationDataGrid.Rows[index].Cells[0].Value.ToString()) : 0;
+            devSingleProjection form = new devSingleProjection(index);
+            form.Show();
+        }
+
+        private void remReservation_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Сигурни ли сте, че искате да изтриете записа?", "Изтриване?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                int index = reservationDataGrid.SelectedCells.Count > 0 ? reservationDataGrid.SelectedCells[0].RowIndex : -1;
+                index = index != -1 ? Int32.Parse(reservationDataGrid.Rows[index].Cells[0].Value.ToString()) : 0;
+                ProjectionRepository.Remove(index);
+                this.getRecords();
+            }
+        }
     }
 }

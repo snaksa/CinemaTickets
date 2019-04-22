@@ -28,22 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.reservationDataGrid = new System.Windows.Forms.DataGridView();
             this.remReservation = new System.Windows.Forms.Button();
             this.editReservation = new System.Windows.Forms.Button();
             this.addReservation = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // reservationDataGrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 141);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 309);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.reservationDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reservationDataGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.reservationDataGrid.Location = new System.Drawing.Point(0, 141);
+            this.reservationDataGrid.Name = "reservationDataGrid";
+            this.reservationDataGrid.Size = new System.Drawing.Size(800, 309);
+            this.reservationDataGrid.TabIndex = 0;
             // 
             // remReservation
             // 
@@ -53,6 +52,7 @@
             this.remReservation.TabIndex = 7;
             this.remReservation.Text = "Изтриване на резервация";
             this.remReservation.UseVisualStyleBackColor = true;
+            this.remReservation.Click += new System.EventHandler(this.remReservation_Click);
             // 
             // editReservation
             // 
@@ -62,6 +62,7 @@
             this.editReservation.TabIndex = 6;
             this.editReservation.Text = "Промяна на резервация";
             this.editReservation.UseVisualStyleBackColor = true;
+            this.editReservation.Click += new System.EventHandler(this.editReservation_Click);
             // 
             // addReservation
             // 
@@ -71,6 +72,7 @@
             this.addReservation.TabIndex = 5;
             this.addReservation.Text = "Добавяне на резервация";
             this.addReservation.UseVisualStyleBackColor = true;
+            this.addReservation.Click += new System.EventHandler(this.addReservation_Click);
             // 
             // devAllReservations
             // 
@@ -80,17 +82,17 @@
             this.Controls.Add(this.remReservation);
             this.Controls.Add(this.editReservation);
             this.Controls.Add(this.addReservation);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.reservationDataGrid);
             this.Name = "devAllReservations";
             this.Text = "devAllReservations";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView reservationDataGrid;
         private System.Windows.Forms.Button remReservation;
         private System.Windows.Forms.Button editReservation;
         private System.Windows.Forms.Button addReservation;

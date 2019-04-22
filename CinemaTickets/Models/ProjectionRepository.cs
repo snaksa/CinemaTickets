@@ -18,16 +18,16 @@ namespace CinemaTickets.Models
             {
                 con.Open();
                 using (SqlCommand command = new SqlCommand(
-                    "SELECT p.id, m.id,m.imgurl, m.title, m.subtitle, m.description, m.trailer_url," +
-                    "c.id, c.name, g.id, g.name, m.duration, m.producer, m.actors " +
+                    "SELECT p.id, m.id, m.imgurl, m.title, m.subtitle, m.description, m.trailer_url," +
+                    "c.id, c.name, g.id, g.name, m.duration, m.producer, m.actors, " +
                     "t.id, t.name, t.price, r.id, r.name, p.time " +
                     "FROM projections p " +
                     "LEFT JOIN movies m ON m.id = p.movie_id " +
                     "LEFT JOIN movie_types t ON t.id = p.movie_type_id " +
-                    "LEFT JOIN room r ON r.id = p.room_id " +
-                    "LEFT JOIN categories c ON c.id = m.category_id" +
-                    "LEFT JOIN genres g ON g.id = m.genre_id" +
-                    "WHERE id = @id", con))
+                    "LEFT JOIN rooms r ON r.id = p.room_id " +
+                    "LEFT JOIN categories c ON c.id = m.category_id " +
+                    "LEFT JOIN genres g ON g.id = m.genre_id " +
+                    "WHERE p.id = @id", con))
                 {
                     command.Parameters.Add("@id", SqlDbType.Int);
                     command.Parameters["@id"].Value = id;
@@ -39,7 +39,7 @@ namespace CinemaTickets.Models
                                 reader.GetInt32(0), //projection id
                                 new Movie(
                                     reader.GetInt32(1), // id
-                                    reader.GetString(2).Trim(),
+                                    reader.GetString(2).Trim(), // imgurl
                                     reader.GetString(3).Trim(), // title
                                     reader.GetString(4).Trim(), // subtitle
                                     reader.GetString(5).Trim(), // description
@@ -56,9 +56,9 @@ namespace CinemaTickets.Models
                                     reader.GetString(12).Trim(), // producer
                                     reader.GetString(13).Trim() // actors
                                 ),
-                                new MovieType(reader.GetInt32(14), reader.GetString(15).Trim()),
-                                new Room(reader.GetInt32(16), reader.GetString(17).Trim()),
-                                reader.GetDateTime(18)
+                                new MovieType(reader.GetInt32(14), reader.GetString(15).Trim(),reader.GetInt32(16)),
+                                new Room(reader.GetInt32(17), reader.GetString(18).Trim()),
+                                reader.GetDateTime(19)
                             );
                         }
                     }
@@ -131,23 +131,23 @@ namespace CinemaTickets.Models
             return projections;
         }
 
-        public static void Add(int movieId, int movieTypeId, int roomId, DateTime time)
+        public static void Add(Projection p)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
                 using (SqlCommand command = new SqlCommand(
                     "INSERT INTO projections (movie_id, movie_type_id, room_id, time) " +
-                    "VALUES(@movie_id, @movie_type_id, @room_id, time)", con))
+                    "VALUES(@movie_id, @movie_type_id, @room_id, @time)", con))
                 {
                     command.Parameters.Add("@movie_id", SqlDbType.Int);
-                    command.Parameters["@movie_id"].Value = movieId;
+                    command.Parameters["@movie_id"].Value = p.Movie.Id;
                     command.Parameters.Add("@movie_type_id", SqlDbType.Int);
-                    command.Parameters["@movie_type_id"].Value = movieTypeId;
+                    command.Parameters["@movie_type_id"].Value = p.MovieType.Id;
                     command.Parameters.Add("@room_id", SqlDbType.Int);
-                    command.Parameters["@room_id"].Value = roomId;
+                    command.Parameters["@room_id"].Value = p.Room.Id;
                     command.Parameters.Add("@time", SqlDbType.DateTime);
-                    command.Parameters["@time"].Value = time;
+                    command.Parameters["@time"].Value = p.Time;
 
                     command.ExecuteNonQuery();
                 }

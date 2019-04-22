@@ -22,5 +22,11 @@ namespace CinemaTickets.Forms.DeveloperForms
             devAllMovies dallm = new devAllMovies();
             dallm.Show();
         }
+
+        private void projectionButton_Click(object sender, EventArgs e)
+        {
+            devAllReservations devAll = new devAllReservations();
+            devAll.Show();
+        }
     }
 }

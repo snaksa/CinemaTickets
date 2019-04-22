@@ -37,10 +37,15 @@
             // 
             // dataGridAllMovies
             // 
+            this.dataGridAllMovies.AllowUserToAddRows = false;
             this.dataGridAllMovies.AllowUserToDeleteRows = false;
+            this.dataGridAllMovies.AllowUserToResizeColumns = false;
+            this.dataGridAllMovies.AllowUserToResizeRows = false;
+            this.dataGridAllMovies.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridAllMovies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridAllMovies.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridAllMovies.Location = new System.Drawing.Point(0, 95);
+            this.dataGridAllMovies.MultiSelect = false;
             this.dataGridAllMovies.Name = "dataGridAllMovies";
             this.dataGridAllMovies.ReadOnly = true;
             this.dataGridAllMovies.Size = new System.Drawing.Size(878, 450);

@@ -50,6 +50,7 @@
             this.projectionButton.TabIndex = 1;
             this.projectionButton.Text = "Прожекции";
             this.projectionButton.UseVisualStyleBackColor = true;
+            this.projectionButton.Click += new System.EventHandler(this.projectionButton_Click);
             // 
             // devMenuForm
             // 
