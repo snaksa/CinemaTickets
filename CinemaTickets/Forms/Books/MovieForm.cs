@@ -12,7 +12,7 @@ namespace CinemaTickets.Forms
 {
     public partial class MovieForm : Form
     {
-        private s bk;
+        private Book bk;
         public MovieForm()
         {
             InitializeComponent();
@@ -20,8 +20,6 @@ namespace CinemaTickets.Forms
 
         private void book_Click(object sender, EventArgs e)
         {
-            bk = new s();
-            bk.Show();
         }
     }
 }

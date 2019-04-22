@@ -1,6 +1,6 @@
 ﻿namespace CinemaTickets.Forms
 {
-    partial class s
+    partial class Book
     {
         /// <summary>
         /// Required designer variable.
@@ -28,170 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mPoster = new System.Windows.Forms.PictureBox();
-            this.mName = new System.Windows.Forms.Label();
+            this.moviePicture = new System.Windows.Forms.PictureBox();
+            this.movieTitle = new System.Windows.Forms.Label();
             this.TicketTypes = new System.Windows.Forms.Label();
             this.Standart = new System.Windows.Forms.Label();
             this.Invalid = new System.Windows.Forms.Label();
-            this.Kids = new System.Windows.Forms.Label();
-            this.Students = new System.Windows.Forms.Label();
             this.seats = new System.Windows.Forms.Button();
             this.Scholars = new System.Windows.Forms.Label();
-            this.brStandart = new System.Windows.Forms.NumericUpDown();
-            this.brInvalid = new System.Windows.Forms.NumericUpDown();
-            this.brKids = new System.Windows.Forms.NumericUpDown();
-            this.brScholars = new System.Windows.Forms.NumericUpDown();
-            this.brStudents = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.mPoster)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brStandart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brInvalid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brKids)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brScholars)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brStudents)).BeginInit();
+            this.ticketStandard = new System.Windows.Forms.NumericUpDown();
+            this.ticketElder = new System.Windows.Forms.NumericUpDown();
+            this.ticketStudent = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.moviePicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketStandard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketElder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketStudent)).BeginInit();
             this.SuspendLayout();
             // 
-            // mPoster
+            // moviePicture
             // 
-            this.mPoster.Location = new System.Drawing.Point(12, 50);
-            this.mPoster.Name = "mPoster";
-            this.mPoster.Size = new System.Drawing.Size(115, 163);
-            this.mPoster.TabIndex = 0;
-            this.mPoster.TabStop = false;
+            this.moviePicture.Location = new System.Drawing.Point(16, 62);
+            this.moviePicture.Margin = new System.Windows.Forms.Padding(4);
+            this.moviePicture.Name = "moviePicture";
+            this.moviePicture.Size = new System.Drawing.Size(153, 201);
+            this.moviePicture.TabIndex = 0;
+            this.moviePicture.TabStop = false;
             // 
-            // mName
+            // movieTitle
             // 
-            this.mName.AutoSize = true;
-            this.mName.Location = new System.Drawing.Point(49, 25);
-            this.mName.Name = "mName";
-            this.mName.Size = new System.Drawing.Size(35, 13);
-            this.mName.TabIndex = 1;
-            this.mName.Text = "label1";
+            this.movieTitle.Location = new System.Drawing.Point(16, 9);
+            this.movieTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.movieTitle.Name = "movieTitle";
+            this.movieTitle.Size = new System.Drawing.Size(153, 49);
+            this.movieTitle.TabIndex = 1;
+            this.movieTitle.Text = "label1";
+            this.movieTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TicketTypes
             // 
             this.TicketTypes.AutoSize = true;
-            this.TicketTypes.Location = new System.Drawing.Point(241, 25);
+            this.TicketTypes.Location = new System.Drawing.Point(321, 31);
+            this.TicketTypes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TicketTypes.Name = "TicketTypes";
-            this.TicketTypes.Size = new System.Drawing.Size(58, 13);
+            this.TicketTypes.Size = new System.Drawing.Size(76, 17);
             this.TicketTypes.TabIndex = 2;
             this.TicketTypes.Text = "Вид билет";
             // 
             // Standart
             // 
             this.Standart.AutoSize = true;
-            this.Standart.Location = new System.Drawing.Point(147, 50);
+            this.Standart.Location = new System.Drawing.Point(196, 62);
+            this.Standart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Standart.Name = "Standart";
-            this.Standart.Size = new System.Drawing.Size(66, 13);
+            this.Standart.Size = new System.Drawing.Size(87, 17);
             this.Standart.TabIndex = 3;
             this.Standart.Text = "Стандартен";
             // 
             // Invalid
             // 
             this.Invalid.AutoSize = true;
-            this.Invalid.Location = new System.Drawing.Point(147, 82);
+            this.Invalid.Location = new System.Drawing.Point(196, 101);
+            this.Invalid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Invalid.Name = "Invalid";
-            this.Invalid.Size = new System.Drawing.Size(63, 13);
+            this.Invalid.Size = new System.Drawing.Size(81, 17);
             this.Invalid.TabIndex = 4;
             this.Invalid.Text = "Инвалиден";
             // 
-            // Kids
-            // 
-            this.Kids.AutoSize = true;
-            this.Kids.Location = new System.Drawing.Point(147, 108);
-            this.Kids.Name = "Kids";
-            this.Kids.Size = new System.Drawing.Size(45, 13);
-            this.Kids.TabIndex = 5;
-            this.Kids.Text = "Детски";
-            // 
-            // Students
-            // 
-            this.Students.AutoSize = true;
-            this.Students.Location = new System.Drawing.Point(145, 160);
-            this.Students.Name = "Students";
-            this.Students.Size = new System.Drawing.Size(65, 13);
-            this.Students.TabIndex = 6;
-            this.Students.Text = "Студентски";
-            // 
             // seats
             // 
-            this.seats.Location = new System.Drawing.Point(232, 189);
+            this.seats.Location = new System.Drawing.Point(295, 235);
+            this.seats.Margin = new System.Windows.Forms.Padding(4);
             this.seats.Name = "seats";
-            this.seats.Size = new System.Drawing.Size(75, 23);
+            this.seats.Size = new System.Drawing.Size(100, 28);
             this.seats.TabIndex = 7;
             this.seats.Text = "Места";
             this.seats.UseVisualStyleBackColor = true;
+            this.seats.Click += new System.EventHandler(this.seats_Click);
             // 
             // Scholars
             // 
             this.Scholars.AutoSize = true;
-            this.Scholars.Location = new System.Drawing.Point(147, 134);
+            this.Scholars.Location = new System.Drawing.Point(197, 142);
+            this.Scholars.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Scholars.Name = "Scholars";
-            this.Scholars.Size = new System.Drawing.Size(41, 13);
+            this.Scholars.Size = new System.Drawing.Size(52, 17);
             this.Scholars.TabIndex = 8;
             this.Scholars.Text = "Учащи";
             // 
-            // brStandart
+            // ticketStandard
             // 
-            this.brStandart.Location = new System.Drawing.Point(244, 50);
-            this.brStandart.Name = "brStandart";
-            this.brStandart.Size = new System.Drawing.Size(31, 20);
-            this.brStandart.TabIndex = 9;
+            this.ticketStandard.Location = new System.Drawing.Point(325, 62);
+            this.ticketStandard.Margin = new System.Windows.Forms.Padding(4);
+            this.ticketStandard.Name = "ticketStandard";
+            this.ticketStandard.Size = new System.Drawing.Size(41, 22);
+            this.ticketStandard.TabIndex = 9;
             // 
-            // brInvalid
+            // ticketElder
             // 
-            this.brInvalid.Location = new System.Drawing.Point(244, 80);
-            this.brInvalid.Name = "brInvalid";
-            this.brInvalid.Size = new System.Drawing.Size(31, 20);
-            this.brInvalid.TabIndex = 10;
+            this.ticketElder.Location = new System.Drawing.Point(325, 98);
+            this.ticketElder.Margin = new System.Windows.Forms.Padding(4);
+            this.ticketElder.Name = "ticketElder";
+            this.ticketElder.Size = new System.Drawing.Size(41, 22);
+            this.ticketElder.TabIndex = 10;
             // 
-            // brKids
+            // ticketStudent
             // 
-            this.brKids.Location = new System.Drawing.Point(244, 108);
-            this.brKids.Name = "brKids";
-            this.brKids.Size = new System.Drawing.Size(31, 20);
-            this.brKids.TabIndex = 11;
+            this.ticketStudent.Location = new System.Drawing.Point(325, 142);
+            this.ticketStudent.Margin = new System.Windows.Forms.Padding(4);
+            this.ticketStudent.Name = "ticketStudent";
+            this.ticketStudent.Size = new System.Drawing.Size(41, 22);
+            this.ticketStudent.TabIndex = 12;
             // 
-            // brScholars
+            // Book
             // 
-            this.brScholars.Location = new System.Drawing.Point(244, 134);
-            this.brScholars.Name = "brScholars";
-            this.brScholars.Size = new System.Drawing.Size(31, 20);
-            this.brScholars.TabIndex = 12;
-            // 
-            // brStudents
-            // 
-            this.brStudents.Location = new System.Drawing.Point(244, 158);
-            this.brStudents.Name = "brStudents";
-            this.brStudents.Size = new System.Drawing.Size(31, 20);
-            this.brStudents.TabIndex = 13;
-            // 
-            // s
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 225);
-            this.Controls.Add(this.brStudents);
-            this.Controls.Add(this.brScholars);
-            this.Controls.Add(this.brKids);
-            this.Controls.Add(this.brInvalid);
-            this.Controls.Add(this.brStandart);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(508, 277);
+            this.Controls.Add(this.ticketStudent);
+            this.Controls.Add(this.ticketElder);
+            this.Controls.Add(this.ticketStandard);
             this.Controls.Add(this.Scholars);
             this.Controls.Add(this.seats);
-            this.Controls.Add(this.Students);
-            this.Controls.Add(this.Kids);
             this.Controls.Add(this.Invalid);
             this.Controls.Add(this.Standart);
             this.Controls.Add(this.TicketTypes);
-            this.Controls.Add(this.mName);
-            this.Controls.Add(this.mPoster);
-            this.Name = "s";
-            this.Text = "s";
-            ((System.ComponentModel.ISupportInitialize)(this.mPoster)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brStandart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brInvalid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brKids)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brScholars)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brStudents)).EndInit();
+            this.Controls.Add(this.movieTitle);
+            this.Controls.Add(this.moviePicture);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "Book";
+            this.Text = "Reservation";
+            ((System.ComponentModel.ISupportInitialize)(this.moviePicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketStandard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketElder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketStudent)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,19 +168,15 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox mPoster;
-        private System.Windows.Forms.Label mName;
+        private System.Windows.Forms.PictureBox moviePicture;
+        private System.Windows.Forms.Label movieTitle;
         private System.Windows.Forms.Label TicketTypes;
         private System.Windows.Forms.Label Standart;
         private System.Windows.Forms.Label Invalid;
-        private System.Windows.Forms.Label Kids;
-        private System.Windows.Forms.Label Students;
         private System.Windows.Forms.Button seats;
         private System.Windows.Forms.Label Scholars;
-        private System.Windows.Forms.NumericUpDown brStandart;
-        private System.Windows.Forms.NumericUpDown brInvalid;
-        private System.Windows.Forms.NumericUpDown brKids;
-        private System.Windows.Forms.NumericUpDown brScholars;
-        private System.Windows.Forms.NumericUpDown brStudents;
+        private System.Windows.Forms.NumericUpDown ticketStandard;
+        private System.Windows.Forms.NumericUpDown ticketElder;
+        private System.Windows.Forms.NumericUpDown ticketStudent;
     }
 }

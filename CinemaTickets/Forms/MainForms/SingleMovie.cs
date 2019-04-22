@@ -56,9 +56,20 @@ namespace CinemaTickets.Forms.MainForms
                 time.Padding = new System.Windows.Forms.Padding(5);
                 time.Size = new System.Drawing.Size(56, 29);
                 time.Text = projection.Time.TimeOfDay.ToString();
+                time.Tag = projection.Id;
+                time.Click += (object sender, EventArgs e) => this.handleClickProjection(sender, e);
+
                 this.Controls.Add(time);
                 projCount++;
             }
+        }
+
+        private void handleClickProjection(object sender, EventArgs e)
+        {
+            Label lb = (Label)sender;
+            int index = Int32.Parse(lb.Tag.ToString());
+            Book book = new Book(index);
+            book.Show();
         }
 
         private string getDayName(DateTime date)
