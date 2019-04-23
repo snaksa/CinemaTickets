@@ -11,6 +11,25 @@ namespace CinemaTickets.Models
             .ConnectionStrings["CinemaTicketsConnectionString"]
             .ConnectionString;
 
+        public static void Add(int ticketId, int seat)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand(
+                    "INSERT INTO seats (ticket_id, seat) " +
+                    "VALUES(@ticketId, @seat)", con))
+                {
+                    command.Parameters.Add("@ticketId", SqlDbType.Int);
+                    command.Parameters["@ticketId"].Value = ticketId;
+                    command.Parameters.Add("@seat", SqlDbType.Int);
+                    command.Parameters["@seat"].Value = seat;
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
         public static List<Seat> GetByProjection(int projectionId)
         {
             using (SqlConnection con = new SqlConnection(connectionString))

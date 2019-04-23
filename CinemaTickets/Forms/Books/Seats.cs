@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
 using CinemaTickets.Models;
+using CinemaTickets.Forms.Books;
 
 namespace CinemaTickets.Forms
 {
@@ -11,14 +12,21 @@ namespace CinemaTickets.Forms
         private List<Label> seats;
         private int seatsCount = 0;
         private int maxSeats = 0;
+        private List<int> selectedSeats;
+        private int projectionId;
+        private SelectedSeats sCount;
 
         public Seats(int projectionId, SelectedSeats selected)
         {
             InitializeComponent();
             this.maxSeats = selected.Sum();
+            this.projectionId = projectionId;
+            sCount = selected;
 
 
             this.seats = new List<Label>();
+            this.selectedSeats = new List<int>();
+
             Projection projection = ProjectionRepository.Get(projectionId);
 
             // screen
@@ -78,6 +86,7 @@ namespace CinemaTickets.Forms
             {
                 this.seatsCount--;
                 this.seats[index].BackColor = System.Drawing.SystemColors.ActiveCaption;
+                this.selectedSeats.Remove(index);
             }
             else
             {
@@ -85,6 +94,7 @@ namespace CinemaTickets.Forms
                 else
                 {
                     this.seats[index].BackColor = System.Drawing.SystemColors.Desktop;
+                    this.selectedSeats.Add(index);
                     this.seatsCount++;
                 }
             }
@@ -99,6 +109,9 @@ namespace CinemaTickets.Forms
                 MessageBox.Show("Моля изберете " + this.maxSeats + " места!", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+
+            Tickets tickets = new Tickets(this.selectedSeats, this.sCount, this.projectionId);
+            tickets.Show();
 
             // TODO: Generate tickets
         }
