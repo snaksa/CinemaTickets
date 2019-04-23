@@ -36,6 +36,7 @@ namespace CinemaTickets.Forms
             SelectedSeats selected = new SelectedSeats(standard, elder, student);
             Seats seats = new Seats(this.projectionId, selected);
             seats.Show();
+            this.Hide();
         }
     }
 }

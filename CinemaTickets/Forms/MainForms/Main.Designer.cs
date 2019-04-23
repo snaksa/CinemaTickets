@@ -35,6 +35,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.devMode = new System.Windows.Forms.PictureBox();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.devMode)).BeginInit();
             this.SuspendLayout();
@@ -43,7 +45,7 @@
             // 
             this.comboBoxGenres.FormattingEnabled = true;
             this.comboBoxGenres.Location = new System.Drawing.Point(472, 165);
-            this.comboBoxGenres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxGenres.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxGenres.Name = "comboBoxGenres";
             this.comboBoxGenres.Size = new System.Drawing.Size(116, 24);
             this.comboBoxGenres.TabIndex = 1;
@@ -94,7 +96,7 @@
             // 
             this.devMode.Image = ((System.Drawing.Image)(resources.GetObject("devMode.Image")));
             this.devMode.Location = new System.Drawing.Point(869, 22);
-            this.devMode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.devMode.Margin = new System.Windows.Forms.Padding(4);
             this.devMode.Name = "devMode";
             this.devMode.Size = new System.Drawing.Size(96, 62);
             this.devMode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -102,12 +104,31 @@
             this.devMode.TabStop = false;
             this.devMode.Click += new System.EventHandler(this.devMode_Click);
             // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Location = new System.Drawing.Point(596, 166);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(158, 22);
+            this.searchTextBox.TabIndex = 25;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(761, 157);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 40);
+            this.searchButton.TabIndex = 26;
+            this.searchButton.Text = "Търси";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(995, 479);
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.devMode);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
@@ -133,5 +154,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox devMode;
+        private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.Button searchButton;
     }
 }

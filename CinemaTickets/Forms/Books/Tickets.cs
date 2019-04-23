@@ -71,7 +71,8 @@ namespace CinemaTickets.Forms.Books
                 seats.RemoveAt(0);
             }
 
-            MessageBox.Show("Браво!", "Резервацията е направена!");
+            MessageBox.Show("Резервацията е направена!", "Честито!");
+            this.Hide();
 
         }
     }

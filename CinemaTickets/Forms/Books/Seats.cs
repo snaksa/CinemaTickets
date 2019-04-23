@@ -112,8 +112,7 @@ namespace CinemaTickets.Forms
 
             Tickets tickets = new Tickets(this.selectedSeats, this.sCount, this.projectionId);
             tickets.Show();
-
-            // TODO: Generate tickets
+            this.Hide();
         }
     }
 }

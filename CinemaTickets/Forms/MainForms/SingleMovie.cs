@@ -30,6 +30,8 @@ namespace CinemaTickets.Forms.MainForms
             int currentDate = 0;
             int projCount = 0;
             int dateCount = -1;
+            int d2Count = 0;
+            int d3Count = 0;
             foreach (Projection projection in projections)
             {
                 if (currentDate == 0 || currentDate != projection.Time.Day)
@@ -37,22 +39,52 @@ namespace CinemaTickets.Forms.MainForms
                     currentDate = projection.Time.Day;
                     projCount = 0;
                     dateCount++;
+                    d2Count = 0;
+                    d3Count = 0;
 
                     Label header = new Label();
                     header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                    header.Location = new System.Drawing.Point(176, 345 + dateCount * 90);
+                    header.Location = new System.Drawing.Point(176, 345 + dateCount * 120);
                     header.Padding = new System.Windows.Forms.Padding(5);
                     header.Size = new System.Drawing.Size(622, 32);
                     header.Text = this.getDayName(projection.Time) + " (" + projection.Time.ToShortDateString() + ")";
                     this.Controls.Add(header);
+
+                    Label type2 = new Label();
+                    type2.AutoSize = false;
+                    type2.BackColor = System.Drawing.SystemColors.ControlLight;
+                    type2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                    type2.Location = new System.Drawing.Point(176, 380 + dateCount * 125);
+                    type2.Padding = new System.Windows.Forms.Padding(5);
+                    type2.Size = new System.Drawing.Size(40, 29);
+                    type2.Text = "2D";
+                    type2.Tag = projection.Id;
+
+                    Label type3 = new Label();
+                    type3.AutoSize = false;
+                    type3.BackColor = System.Drawing.SystemColors.ControlLight;
+                    type3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                    type3.Location = new System.Drawing.Point(176, 380 + dateCount * 125 + 35);
+                    type3.Padding = new System.Windows.Forms.Padding(5);
+                    type3.Size = new System.Drawing.Size(40, 29);
+                    type3.Text = "3D";
+                    type3.Tag = projection.Id;
+
+                    this.Controls.Add(type2);
+                    this.Controls.Add(type3);
                 }
+
+                bool d2 = projection.MovieType.Name == "2D" ? true : false;
+                int c = projection.MovieType.Name == "2D" ? d2Count : d3Count;
+                if (d2) d2Count++;
+                else d3Count++;
 
                 Label time = new Label();
                 time.AutoSize = false;
                 time.Cursor = Cursors.Hand;
                 time.BackColor = System.Drawing.SystemColors.AppWorkspace;
                 time.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                time.Location = new System.Drawing.Point(176 + projCount * 60, 380 + dateCount * 90);
+                time.Location = new System.Drawing.Point(220 + c * 60, 380 + dateCount * 125 + (d2 ? 0 : 35));
                 time.Padding = new System.Windows.Forms.Padding(5);
                 time.Size = new System.Drawing.Size(56, 29);
                 time.Text = projection.Time.TimeOfDay.ToString();
@@ -70,6 +102,7 @@ namespace CinemaTickets.Forms.MainForms
             int index = Int32.Parse(lb.Tag.ToString());
             Book book = new Book(index);
             book.Show();
+            this.Hide();
         }
 
         private string getDayName(DateTime date)

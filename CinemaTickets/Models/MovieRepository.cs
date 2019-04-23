@@ -56,7 +56,7 @@ namespace CinemaTickets.Models
 
             return null;
         }
-        public static List<Movie> GetAll(bool limit = false, int genre_id = 0)
+        public static List<Movie> GetAll(bool limit = false, int genre_id = 0, string searchText = "")
         {
             List<Movie> movies = new List<Movie>();
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -68,12 +68,20 @@ namespace CinemaTickets.Models
                     "FROM movies m " +
                     "LEFT JOIN categories c ON c.id = m.category_id " +
                     "LEFT JOIN genres g ON g.id = m.genre_id " +
-                    (genre_id != 0 ? "WHERE g.id = @genreId" : ""), con))
+                    (genre_id != 0 ? " WHERE g.id = @genreId " : "") +
+                    (genre_id != 0 && searchText != "" ? " AND " : searchText != "" ? " WHERE " : "") +
+                    (searchText != "" ? " m.title LIKE @search " : ""), con))
                 {
                     if(genre_id != 0)
                     {
                         command.Parameters.Add("@genreId", SqlDbType.Int);
                         command.Parameters["@genreId"].Value = genre_id;
+                    }
+
+                    if (searchText != "")
+                    {
+                        command.Parameters.Add("@search", SqlDbType.NVarChar);
+                        command.Parameters["@search"].Value = "%" + searchText + "%";
                     }
 
                     using (SqlDataReader reader = command.ExecuteReader())

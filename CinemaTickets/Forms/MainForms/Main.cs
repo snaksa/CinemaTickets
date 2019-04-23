@@ -12,6 +12,7 @@ namespace CinemaTickets.Forms
         private devLogIn dlogin;
         private Programa prog;
         private allMovies allm;
+        private int genreId = 0;
 
         List<Label> movieLabels;
         List<Label> movieLabelsMore;
@@ -40,26 +41,15 @@ namespace CinemaTickets.Forms
 
         }
 
-        private void programa_Click(object sender, EventArgs e)
-        {
-            prog = new Programa();
-            //prog.MdiParent = this;
-            prog.Show();
-
-        }
-
-        private void allmovies_Click(object sender, EventArgs e)
-        {
-            allm = new allMovies();
-            allm.Show();
-        }
-
         private void comboBoxGenres_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox comboBox = (ComboBox)sender;
             GenreOption genre = (GenreOption)comboBox.SelectedItem;
+            this.genreId = genre.Id;
             setMovies(MovieRepository.GetAll(true, genre.Id));
-
+            button1.Visible = true;
+            this.Size = new System.Drawing.Size(1013, 526);
+            searchTextBox.Text = "";
         }
 
         private void setMovies(List<Movie> movies)
@@ -72,21 +62,19 @@ namespace CinemaTickets.Forms
             
             this.allMovies = movies;
 
+            int y = 225;
+            int x = -1;
             for (int i = 0; i < movies.Count; i++)
             {
-                //Label lb = new Label();
-                //lb.AutoSize = false;
-                //lb.Location = new System.Drawing.Point(16 + i * 150, 206);
-                //lb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-                //lb.Size = new System.Drawing.Size(46, 17);
-                //lb.TabIndex = 13;
-                //lb.Text = movies[i].Title;
-                //lb.Tag = i;
-                //lb.Cursor = Cursors.Hand;
-                //lb.Click += (object sender, EventArgs e) => this.handlePictureClick(sender, e);
+                x++;
+                if(i != 0 && i % 6 == 0)
+                {
+                    y += 210;
+                    x = 0;
+                }
 
                 PictureBox pb = new PictureBox();
-                pb.Location = new System.Drawing.Point(16 + i * 150, 225);
+                pb.Location = new System.Drawing.Point(16 + x * 150, y);
                 pb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
                 pb.Size = new System.Drawing.Size(133, 203);
                 pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -97,37 +85,12 @@ namespace CinemaTickets.Forms
                 pb.BorderStyle = BorderStyle.FixedSingle;
                 pb.Cursor = Cursors.Hand;
                 pb.Tag = i;
-                pb.MouseEnter += (object sender, EventArgs e) => this.handlePictureHover(sender, e);
-                pb.MouseLeave += (object sender, EventArgs e) => this.handlePictureHover(sender, e);
                 pb.Click += (object sender, EventArgs e) => this.handlePictureClick(sender, e);
-
-                Label lbMore = new Label();
-                lbMore.AutoSize = false;
-                lbMore.Location = new System.Drawing.Point(35 + i * 150, 310);
-                lbMore.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
-                lbMore.Size = new System.Drawing.Size(98, 20);
-                lbMore.TabIndex = 13;
-                lbMore.Visible = false;
-                lbMore.Text = "Подробности";
-                lbMore.BorderStyle = BorderStyle.FixedSingle;
-                lbMore.Tag = i;
-                lbMore.Click += (object sender, EventArgs e) => this.handlePictureClick(sender, e);
-
-                //this.Controls.Add(lb);
-                this.Controls.Add(lbMore);
+                
+                
                 this.Controls.Add(pb);
-
-                //this.movieLabels.Add(lb);
-                this.movieLabelsMore.Add(lbMore);
                 this.moviePictues.Add(pb);
             }
-        }
-
-        private void handlePictureHover(object sender, EventArgs e)
-        {
-            PictureBox pb = (PictureBox)sender;
-            Label lb = this.movieLabelsMore[Int32.Parse(pb.Tag.ToString())];
-            lb.Visible = !lb.Visible;
         }
 
         private void handlePictureClick(object sender, EventArgs e)
@@ -151,11 +114,6 @@ namespace CinemaTickets.Forms
             sm.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void devMode_Click(object sender, EventArgs e)
         {
 
@@ -163,5 +121,27 @@ namespace CinemaTickets.Forms
             dlogin.Show();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.Visible = false;
+            this.Size = new System.Drawing.Size(1013, 700);
+            this.setMovies(MovieRepository.GetAll(false, this.genreId));
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            List<Movie> movies =MovieRepository.GetAll(false, this.genreId, searchTextBox.Text);
+            this.setMovies(movies);
+            button1.Visible = false;
+            if(movies.Count > 6)
+            {
+                this.Size = new System.Drawing.Size(1013, 700);
+            }
+            else
+            {
+                this.Size = new System.Drawing.Size(1013, 526);
+            }
+        }
     }
-    }
+}
