@@ -51,5 +51,20 @@ namespace CinemaTickets.Models
             return 0;
         }
 
+        public static void RemoveByReservation(int id)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand("DELETE FROM tickets WHERE reservation_id = @id", con))
+                {
+                    command.Parameters.Add("@id", SqlDbType.Int);
+                    command.Parameters["@id"].Value = id;
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
     }
 }

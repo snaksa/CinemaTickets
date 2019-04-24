@@ -36,8 +36,8 @@ namespace CinemaTickets.Forms
                 con.Open();
                
                 using (SqlDataAdapter adapter = new SqlDataAdapter(
-                     "SELECT  m.id,m.imgurl, m.title, m.subtitle, m.description, m.trailer_url," +
-                    "g.name, m.duration, m.producer, m.actors " +
+                     "SELECT  m.id as 'Номер',m.imgurl as 'Постер ', m.title as 'Заглавие ', m.subtitle as 'Подзаглавие', m.description as 'Описание', m.trailer_url as 'Трейлър'," +
+                    "g.name as 'Жанр', c.name as 'Категория', m.duration as 'Времетраене', m.producer as 'Продуцент', m.actors as 'Актьори' " +
                     "FROM movies m " +
                     "LEFT JOIN categories c ON c.id = m.category_id " +
                     "LEFT JOIN genres g ON g.id = m.genre_id ",con))

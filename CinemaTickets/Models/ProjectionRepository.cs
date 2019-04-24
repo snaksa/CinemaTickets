@@ -161,7 +161,7 @@ namespace CinemaTickets.Models
                 con.Open();
                 using (SqlCommand command = new SqlCommand(
                     "UPDATE projections SET movie_id = @movie_id, movie_type_id = @movie_type_id, " +
-                    "room_id = @room_id, time = @time) " +
+                    "room_id = @room_id, time = @time " +
                     "WHERE id= @id", con))
                 {
                     command.Parameters.Add("@id", SqlDbType.Int);

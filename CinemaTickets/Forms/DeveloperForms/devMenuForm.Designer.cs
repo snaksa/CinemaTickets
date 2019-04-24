@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(devMenuForm));
             this.moviesButton = new System.Windows.Forms.Button();
             this.projectionButton = new System.Windows.Forms.Button();
+            this.devAllRbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // moviesButton
             // 
             this.moviesButton.Location = new System.Drawing.Point(13, 31);
             this.moviesButton.Name = "moviesButton";
-            this.moviesButton.Size = new System.Drawing.Size(75, 23);
+            this.moviesButton.Size = new System.Drawing.Size(82, 23);
             this.moviesButton.TabIndex = 0;
             this.moviesButton.Text = "Филми";
             this.moviesButton.UseVisualStyleBackColor = true;
@@ -46,21 +48,33 @@
             // 
             this.projectionButton.Location = new System.Drawing.Point(13, 73);
             this.projectionButton.Name = "projectionButton";
-            this.projectionButton.Size = new System.Drawing.Size(75, 23);
+            this.projectionButton.Size = new System.Drawing.Size(82, 23);
             this.projectionButton.TabIndex = 1;
             this.projectionButton.Text = "Прожекции";
             this.projectionButton.UseVisualStyleBackColor = true;
             this.projectionButton.Click += new System.EventHandler(this.projectionButton_Click);
             // 
+            // devAllRbutton
+            // 
+            this.devAllRbutton.Location = new System.Drawing.Point(13, 112);
+            this.devAllRbutton.Name = "devAllRbutton";
+            this.devAllRbutton.Size = new System.Drawing.Size(82, 23);
+            this.devAllRbutton.TabIndex = 2;
+            this.devAllRbutton.Text = "Резервации";
+            this.devAllRbutton.UseVisualStyleBackColor = true;
+            this.devAllRbutton.Click += new System.EventHandler(this.devAllRbutton_Click);
+            // 
             // devMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 154);
+            this.ClientSize = new System.Drawing.Size(148, 182);
+            this.Controls.Add(this.devAllRbutton);
             this.Controls.Add(this.projectionButton);
             this.Controls.Add(this.moviesButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "devMenuForm";
-            this.Text = "devMenuForm";
+            this.Text = "Меню";
             this.ResumeLayout(false);
 
         }
@@ -69,5 +83,6 @@
 
         private System.Windows.Forms.Button moviesButton;
         private System.Windows.Forms.Button projectionButton;
+        private System.Windows.Forms.Button devAllRbutton;
     }
 }

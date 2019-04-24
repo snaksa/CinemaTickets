@@ -28,6 +28,7 @@ namespace CinemaTickets.Forms
             //{
                 devMenuForm dmf = new devMenuForm();
                 dmf.Show();
+            this.Hide();
             //}
            // else
            // {

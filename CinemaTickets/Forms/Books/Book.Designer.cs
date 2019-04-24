@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Book));
             this.moviePicture = new System.Windows.Forms.PictureBox();
             this.movieTitle = new System.Windows.Forms.Label();
             this.TicketTypes = new System.Windows.Forms.Label();
@@ -46,19 +47,19 @@
             // 
             // moviePicture
             // 
-            this.moviePicture.Location = new System.Drawing.Point(16, 62);
-            this.moviePicture.Margin = new System.Windows.Forms.Padding(4);
+            this.moviePicture.Location = new System.Drawing.Point(12, 50);
             this.moviePicture.Name = "moviePicture";
-            this.moviePicture.Size = new System.Drawing.Size(153, 201);
+            this.moviePicture.Size = new System.Drawing.Size(115, 163);
+            this.moviePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.moviePicture.TabIndex = 0;
             this.moviePicture.TabStop = false;
             // 
             // movieTitle
             // 
-            this.movieTitle.Location = new System.Drawing.Point(16, 9);
-            this.movieTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.movieTitle.ForeColor = System.Drawing.Color.White;
+            this.movieTitle.Location = new System.Drawing.Point(12, 7);
             this.movieTitle.Name = "movieTitle";
-            this.movieTitle.Size = new System.Drawing.Size(153, 49);
+            this.movieTitle.Size = new System.Drawing.Size(115, 40);
             this.movieTitle.TabIndex = 1;
             this.movieTitle.Text = "label1";
             this.movieTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -66,39 +67,38 @@
             // TicketTypes
             // 
             this.TicketTypes.AutoSize = true;
-            this.TicketTypes.Location = new System.Drawing.Point(321, 31);
-            this.TicketTypes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TicketTypes.ForeColor = System.Drawing.Color.White;
+            this.TicketTypes.Location = new System.Drawing.Point(238, 50);
             this.TicketTypes.Name = "TicketTypes";
-            this.TicketTypes.Size = new System.Drawing.Size(76, 17);
+            this.TicketTypes.Size = new System.Drawing.Size(58, 13);
             this.TicketTypes.TabIndex = 2;
             this.TicketTypes.Text = "Вид билет";
             // 
             // Standart
             // 
             this.Standart.AutoSize = true;
-            this.Standart.Location = new System.Drawing.Point(196, 62);
-            this.Standart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Standart.ForeColor = System.Drawing.Color.White;
+            this.Standart.Location = new System.Drawing.Point(144, 75);
             this.Standart.Name = "Standart";
-            this.Standart.Size = new System.Drawing.Size(87, 17);
+            this.Standart.Size = new System.Drawing.Size(66, 13);
             this.Standart.TabIndex = 3;
             this.Standart.Text = "Стандартен";
             // 
             // Invalid
             // 
             this.Invalid.AutoSize = true;
-            this.Invalid.Location = new System.Drawing.Point(196, 101);
-            this.Invalid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Invalid.ForeColor = System.Drawing.Color.White;
+            this.Invalid.Location = new System.Drawing.Point(144, 107);
             this.Invalid.Name = "Invalid";
-            this.Invalid.Size = new System.Drawing.Size(81, 17);
+            this.Invalid.Size = new System.Drawing.Size(63, 13);
             this.Invalid.TabIndex = 4;
             this.Invalid.Text = "Инвалиден";
             // 
             // seats
             // 
-            this.seats.Location = new System.Drawing.Point(295, 235);
-            this.seats.Margin = new System.Windows.Forms.Padding(4);
+            this.seats.Location = new System.Drawing.Point(221, 191);
             this.seats.Name = "seats";
-            this.seats.Size = new System.Drawing.Size(100, 28);
+            this.seats.Size = new System.Drawing.Size(75, 23);
             this.seats.TabIndex = 7;
             this.seats.Text = "Места";
             this.seats.UseVisualStyleBackColor = true;
@@ -107,43 +107,40 @@
             // Scholars
             // 
             this.Scholars.AutoSize = true;
-            this.Scholars.Location = new System.Drawing.Point(197, 142);
-            this.Scholars.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Scholars.ForeColor = System.Drawing.Color.White;
+            this.Scholars.Location = new System.Drawing.Point(145, 140);
             this.Scholars.Name = "Scholars";
-            this.Scholars.Size = new System.Drawing.Size(52, 17);
+            this.Scholars.Size = new System.Drawing.Size(35, 13);
             this.Scholars.TabIndex = 8;
-            this.Scholars.Text = "Учащи";
+            this.Scholars.Text = "Учащ";
             // 
             // ticketStandard
             // 
-            this.ticketStandard.Location = new System.Drawing.Point(325, 62);
-            this.ticketStandard.Margin = new System.Windows.Forms.Padding(4);
+            this.ticketStandard.Location = new System.Drawing.Point(241, 75);
             this.ticketStandard.Name = "ticketStandard";
-            this.ticketStandard.Size = new System.Drawing.Size(41, 22);
+            this.ticketStandard.Size = new System.Drawing.Size(31, 20);
             this.ticketStandard.TabIndex = 9;
             // 
             // ticketElder
             // 
-            this.ticketElder.Location = new System.Drawing.Point(325, 98);
-            this.ticketElder.Margin = new System.Windows.Forms.Padding(4);
+            this.ticketElder.Location = new System.Drawing.Point(241, 105);
             this.ticketElder.Name = "ticketElder";
-            this.ticketElder.Size = new System.Drawing.Size(41, 22);
+            this.ticketElder.Size = new System.Drawing.Size(31, 20);
             this.ticketElder.TabIndex = 10;
             // 
             // ticketStudent
             // 
-            this.ticketStudent.Location = new System.Drawing.Point(325, 142);
-            this.ticketStudent.Margin = new System.Windows.Forms.Padding(4);
+            this.ticketStudent.Location = new System.Drawing.Point(241, 140);
             this.ticketStudent.Name = "ticketStudent";
-            this.ticketStudent.Size = new System.Drawing.Size(41, 22);
+            this.ticketStudent.Size = new System.Drawing.Size(31, 20);
             this.ticketStudent.TabIndex = 12;
             // 
             // Book
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(508, 277);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(381, 225);
             this.Controls.Add(this.ticketStudent);
             this.Controls.Add(this.ticketElder);
             this.Controls.Add(this.ticketStandard);
@@ -154,9 +151,9 @@
             this.Controls.Add(this.TicketTypes);
             this.Controls.Add(this.movieTitle);
             this.Controls.Add(this.moviePicture);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Book";
-            this.Text = "Reservation";
+            this.Text = "Резервация";
             ((System.ComponentModel.ISupportInitialize)(this.moviePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketStandard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketElder)).EndInit();

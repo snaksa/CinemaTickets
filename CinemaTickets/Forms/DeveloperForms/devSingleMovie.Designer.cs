@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(devSingleMovie));
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,124 +55,126 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 255);
+            this.label3.Location = new System.Drawing.Point(12, 209);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 20;
-            this.label3.Text = "Актьори";
+            this.label3.Text = "Актьори:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 225);
+            this.label2.Location = new System.Drawing.Point(12, 157);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 19;
-            this.label2.Text = "Времетраене";
+            this.label2.Text = "Времетраене:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 197);
+            this.label1.Location = new System.Drawing.Point(12, 126);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Продуцент";
+            this.label1.Text = "Продуцент:";
             // 
             // producerTextBox
             // 
-            this.producerTextBox.Location = new System.Drawing.Point(101, 194);
+            this.producerTextBox.Location = new System.Drawing.Point(88, 126);
             this.producerTextBox.Name = "producerTextBox";
-            this.producerTextBox.Size = new System.Drawing.Size(100, 20);
+            this.producerTextBox.Size = new System.Drawing.Size(182, 20);
             this.producerTextBox.TabIndex = 21;
             // 
             // durationTextBox
             // 
-            this.durationTextBox.Location = new System.Drawing.Point(101, 225);
+            this.durationTextBox.Location = new System.Drawing.Point(88, 157);
             this.durationTextBox.Name = "durationTextBox";
-            this.durationTextBox.Size = new System.Drawing.Size(100, 20);
+            this.durationTextBox.Size = new System.Drawing.Size(68, 20);
             this.durationTextBox.TabIndex = 22;
             // 
             // actorsTextBox
             // 
-            this.actorsTextBox.Location = new System.Drawing.Point(101, 252);
+            this.actorsTextBox.Location = new System.Drawing.Point(87, 209);
+            this.actorsTextBox.Multiline = true;
             this.actorsTextBox.Name = "actorsTextBox";
-            this.actorsTextBox.Size = new System.Drawing.Size(100, 20);
+            this.actorsTextBox.Size = new System.Drawing.Size(183, 20);
             this.actorsTextBox.TabIndex = 23;
             // 
             // titleTextBox
             // 
-            this.titleTextBox.Location = new System.Drawing.Point(101, 58);
+            this.titleTextBox.Location = new System.Drawing.Point(88, 12);
             this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(100, 20);
+            this.titleTextBox.Size = new System.Drawing.Size(182, 20);
             this.titleTextBox.TabIndex = 24;
             // 
             // subTitleTextBox
             // 
-            this.subTitleTextBox.Location = new System.Drawing.Point(101, 84);
+            this.subTitleTextBox.Location = new System.Drawing.Point(88, 38);
             this.subTitleTextBox.Name = "subTitleTextBox";
-            this.subTitleTextBox.Size = new System.Drawing.Size(100, 20);
+            this.subTitleTextBox.Size = new System.Drawing.Size(182, 20);
             this.subTitleTextBox.TabIndex = 25;
             // 
             // descriptionTextBox
             // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(101, 110);
+            this.descriptionTextBox.Location = new System.Drawing.Point(87, 183);
+            this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(100, 20);
+            this.descriptionTextBox.Size = new System.Drawing.Size(183, 20);
             this.descriptionTextBox.TabIndex = 26;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 58);
+            this.label4.Location = new System.Drawing.Point(12, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 27;
-            this.label4.Text = "Име";
+            this.label4.Text = "Заглавие:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 87);
+            this.label5.Location = new System.Drawing.Point(12, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 13);
+            this.label5.Size = new System.Drawing.Size(77, 13);
             this.label5.TabIndex = 28;
-            this.label5.Text = "събзаглавие";
+            this.label5.Text = "Подзаглавие:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 110);
+            this.label6.Location = new System.Drawing.Point(12, 186);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 13);
+            this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 29;
-            this.label6.Text = "description";
+            this.label6.Text = "Описание:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(36, 139);
+            this.label7.Location = new System.Drawing.Point(12, 68);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 13);
+            this.label7.Size = new System.Drawing.Size(63, 13);
             this.label7.TabIndex = 30;
-            this.label7.Text = "категория";
+            this.label7.Text = "Категория:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(62, 167);
+            this.label8.Location = new System.Drawing.Point(12, 99);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 13);
+            this.label8.Size = new System.Drawing.Size(39, 13);
             this.label8.TabIndex = 31;
-            this.label8.Text = "жанр";
+            this.label8.Text = "Жанр:";
             // 
             // categoriesComboBox
             // 
             this.categoriesComboBox.FormattingEnabled = true;
-            this.categoriesComboBox.Location = new System.Drawing.Point(101, 136);
+            this.categoriesComboBox.Location = new System.Drawing.Point(88, 68);
             this.categoriesComboBox.Name = "categoriesComboBox";
             this.categoriesComboBox.Size = new System.Drawing.Size(68, 21);
             this.categoriesComboBox.TabIndex = 32;
@@ -179,7 +182,7 @@
             // genresComboBox
             // 
             this.genresComboBox.FormattingEnabled = true;
-            this.genresComboBox.Location = new System.Drawing.Point(101, 167);
+            this.genresComboBox.Location = new System.Drawing.Point(88, 99);
             this.genresComboBox.Name = "genresComboBox";
             this.genresComboBox.Size = new System.Drawing.Size(68, 21);
             this.genresComboBox.TabIndex = 33;
@@ -187,42 +190,42 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(46, 281);
+            this.label9.Location = new System.Drawing.Point(286, 12);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(49, 13);
             this.label9.TabIndex = 34;
-            this.label9.Text = "posterUrl";
+            this.label9.Text = "Снимка:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(50, 316);
+            this.label10.Location = new System.Drawing.Point(286, 38);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 13);
+            this.label10.Size = new System.Drawing.Size(54, 13);
             this.label10.TabIndex = 35;
-            this.label10.Text = "trailerUrl";
+            this.label10.Text = "Трейлър:";
             // 
             // posterUrlTextBox
             // 
-            this.posterUrlTextBox.Location = new System.Drawing.Point(101, 278);
+            this.posterUrlTextBox.Location = new System.Drawing.Point(341, 9);
             this.posterUrlTextBox.Name = "posterUrlTextBox";
-            this.posterUrlTextBox.Size = new System.Drawing.Size(100, 20);
+            this.posterUrlTextBox.Size = new System.Drawing.Size(325, 20);
             this.posterUrlTextBox.TabIndex = 36;
             // 
             // trailerUrlTextBox
             // 
-            this.trailerUrlTextBox.Location = new System.Drawing.Point(101, 313);
+            this.trailerUrlTextBox.Location = new System.Drawing.Point(341, 35);
             this.trailerUrlTextBox.Name = "trailerUrlTextBox";
-            this.trailerUrlTextBox.Size = new System.Drawing.Size(100, 20);
+            this.trailerUrlTextBox.Size = new System.Drawing.Size(325, 20);
             this.trailerUrlTextBox.TabIndex = 37;
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(309, 303);
+            this.saveButton.Location = new System.Drawing.Point(456, 126);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.Size = new System.Drawing.Size(99, 35);
             this.saveButton.TabIndex = 38;
-            this.saveButton.Text = "dobavqne";
+            this.saveButton.Text = "Запази";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
@@ -230,7 +233,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 375);
+            this.ClientSize = new System.Drawing.Size(678, 247);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.trailerUrlTextBox);
             this.Controls.Add(this.posterUrlTextBox);
@@ -252,8 +255,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "devSingleMovie";
-            this.Text = "devSingleMovie";
+            this.Text = "Филм";
             this.ResumeLayout(false);
             this.PerformLayout();
 

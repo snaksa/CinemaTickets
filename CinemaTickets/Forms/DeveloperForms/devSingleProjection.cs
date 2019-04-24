@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CinemaTickets.Models;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace CinemaTickets.Forms.DeveloperForms
 {
@@ -20,6 +21,8 @@ namespace CinemaTickets.Forms.DeveloperForms
         public devSingleProjection(int id = 0)
         {
             InitializeComponent();
+            dateTimePicker.Format = DateTimePickerFormat.Custom;
+            dateTimePicker.CustomFormat = "d-MM-yyyy HH:mm";
             Projection projection = null;
             if (id != 0)
             {
@@ -61,7 +64,8 @@ namespace CinemaTickets.Forms.DeveloperForms
         private void submitButton_Click(object sender, EventArgs e)
         {
             
-                Projection p = new Projection(this.id,this.movies[moviesComboBox.SelectedIndex],
+
+            Projection p = new Projection(this.id,this.movies[moviesComboBox.SelectedIndex],
                     this.mvtypes[MovieTypesComboBox.SelectedIndex],
                     this.rooms[RoomComboBox.SelectedIndex],dateTimePicker.Value);
 

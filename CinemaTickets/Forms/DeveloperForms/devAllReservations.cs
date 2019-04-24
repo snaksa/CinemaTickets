@@ -1,23 +1,24 @@
-﻿using System;
+﻿using CinemaTickets.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CinemaTickets.Models;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace CinemaTickets.Forms.DeveloperForms
 {
     public partial class devAllReservations : Form
     {
 
+
         public devAllReservations()
         {
-           
+
             InitializeComponent();
             this.getRecords();
         }
@@ -34,50 +35,39 @@ namespace CinemaTickets.Forms.DeveloperForms
             {
                 con.Open();
 
-                using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT p.id, m.imgurl, m.title," +
-                    "c.name, g.name, m.duration, " +
-                    "t.name, r.name, p.time " +
-                    "FROM projections p " +
-                    "LEFT JOIN movies m ON m.id = p.movie_id " +
-                    "LEFT JOIN movie_types t ON t.id = p.movie_type_id " +
-                    "LEFT JOIN rooms r ON r.id = p.room_id " +
-                    "LEFT JOIN categories c ON c.id = m.category_id " +
-                    "LEFT JOIN genres g ON g.id = m.genre_id "
+                using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT r.id, p.id, rr.name, m.title," +
+                    "p.time, mt.name " +
+                    "FROM reservations r " +
+                    "LEFT JOIN projections p ON p.id = r.projection_id " +
+                    "LEFT JOIN rooms rr ON p.room_id = rr.id " +
+                    "LEFT JOIN movies m ON p.movie_id = m.id " +
+                    "LEFT JOIN movie_types mt ON p.movie_type_id = mt.id"
+                   
+                   
+                   
+      
                     , con))
                 {
-                        DataTable table = new DataTable();
-                        adapter.Fill(table);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
 
-                       
-                        reservationDataGrid.DataSource = table;
-                   
+
+                    allReservationGrid.DataSource = table;
+
                 }
             }
         }
 
-        private void addReservation_Click(object sender, EventArgs e)
-        {
-            devSingleProjection form = new devSingleProjection();
-            form.FormClosed += new FormClosedEventHandler(this.OnFormClose);
-            form.Show();
-        }
-
-        private void editReservation_Click(object sender, EventArgs e)
-        {
-            int index = reservationDataGrid.SelectedCells.Count > 0 ? reservationDataGrid.SelectedCells[0].RowIndex : -1;
-            index = index != -1 ? Int32.Parse(reservationDataGrid.Rows[index].Cells[0].Value.ToString()) : 0;
-            devSingleProjection form = new devSingleProjection(index);
-            form.Show();
-        }
-
-        private void remReservation_Click(object sender, EventArgs e)
+        private void delReservations_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Сигурни ли сте, че искате да изтриете записа?", "Изтриване?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                int index = reservationDataGrid.SelectedCells.Count > 0 ? reservationDataGrid.SelectedCells[0].RowIndex : -1;
-                index = index != -1 ? Int32.Parse(reservationDataGrid.Rows[index].Cells[0].Value.ToString()) : 0;
-                ProjectionRepository.Remove(index);
+                int index = allReservationGrid.SelectedCells.Count > 0 ? allReservationGrid.SelectedCells[0].RowIndex : -1;
+                index = index != -1 ? Int32.Parse(allReservationGrid.Rows[index].Cells[0].Value.ToString()) : 0;
+               // TicketRepository.RemoveByReservation(index);
+               // SeatRepository.RemoveByReservation(index);
+               // ReservationRepository.Remove(index);
                 this.getRecords();
             }
         }

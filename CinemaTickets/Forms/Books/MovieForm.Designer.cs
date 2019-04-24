@@ -37,12 +37,10 @@
             this.actors = new System.Windows.Forms.Label();
             this.actorsText = new System.Windows.Forms.RichTextBox();
             this.book = new System.Windows.Forms.Button();
-            this.s = new AxShockwaveFlashObjects.AxShockwaveFlash();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgMovie)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.s)).BeginInit();
             this.SuspendLayout();
             // 
             // imgMovie
@@ -115,14 +113,7 @@
             this.book.UseVisualStyleBackColor = true;
             this.book.Click += new System.EventHandler(this.book_Click);
             // 
-            // s
-            // 
-            this.s.Enabled = true;
-            this.s.Location = new System.Drawing.Point(392, 21);
-            this.s.Name = "s";
-            this.s.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("s.OcxState")));
-            this.s.Size = new System.Drawing.Size(391, 297);
-            this.s.TabIndex = 8;
+            
             // 
             // textBox1
             // 
@@ -153,7 +144,6 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.s);
             this.Controls.Add(this.book);
             this.Controls.Add(this.actorsText);
             this.Controls.Add(this.actors);
@@ -165,7 +155,6 @@
             this.Name = "Movie";
             this.Text = "Movie";
             ((System.ComponentModel.ISupportInitialize)(this.imgMovie)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.s)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,7 +170,7 @@
         private System.Windows.Forms.Label actors;
         private System.Windows.Forms.RichTextBox actorsText;
         private System.Windows.Forms.Button book;
-        private AxShockwaveFlashObjects.AxShockwaveFlash s;
+        
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;

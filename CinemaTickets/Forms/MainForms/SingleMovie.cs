@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using CinemaTickets.Models;
@@ -11,7 +12,7 @@ namespace CinemaTickets.Forms.MainForms
         public SingleMovie(int id)
         {
             InitializeComponent();
-
+            int mvID = id;
             Movie movie = MovieRepository.Get(id);
             List<Projection> projections = ProjectionRepository.GetAll(id);
 
@@ -22,10 +23,13 @@ namespace CinemaTickets.Forms.MainForms
             movieDuration.Text = movie.Duration.ToString() + " минути";
             movieActors.Text = movie.Actors;
             movieGenre.Text = movie.Genre.Name;
-
+            string url = movie.TrailerUrl;
+             
             moviePicture.ImageLocation = movie.ImgUrl;
             moviePicture.BorderStyle = BorderStyle.FixedSingle;
             moviePicture.Image = Image.FromFile(@"Images\loader.gif");
+            moviePicture.MouseClick += new MouseEventHandler((o, a) => Process.Start("chrome.exe", url));
+
 
             int currentDate = 0;
             int projCount = 0;
@@ -45,6 +49,7 @@ namespace CinemaTickets.Forms.MainForms
                     Label header = new Label();
                     header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
                     header.Location = new System.Drawing.Point(176, 345 + dateCount * 120);
+                    header.ForeColor = System.Drawing.Color.White;
                     header.Padding = new System.Windows.Forms.Padding(5);
                     header.Size = new System.Drawing.Size(622, 32);
                     header.Text = this.getDayName(projection.Time) + " (" + projection.Time.ToShortDateString() + ")";
@@ -52,7 +57,9 @@ namespace CinemaTickets.Forms.MainForms
 
                     Label type2 = new Label();
                     type2.AutoSize = false;
-                    type2.BackColor = System.Drawing.SystemColors.ControlLight;
+                    type2.BackColor = System.Drawing.Color.Black;
+                
+                    type2.ForeColor = System.Drawing.Color.White;
                     type2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
                     type2.Location = new System.Drawing.Point(176, 380 + dateCount * 125);
                     type2.Padding = new System.Windows.Forms.Padding(5);
@@ -62,7 +69,8 @@ namespace CinemaTickets.Forms.MainForms
 
                     Label type3 = new Label();
                     type3.AutoSize = false;
-                    type3.BackColor = System.Drawing.SystemColors.ControlLight;
+                    type3.BackColor = System.Drawing.Color.Black;
+                    type3.ForeColor = System.Drawing.Color.White;
                     type3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
                     type3.Location = new System.Drawing.Point(176, 380 + dateCount * 125 + 35);
                     type3.Padding = new System.Windows.Forms.Padding(5);
@@ -72,7 +80,10 @@ namespace CinemaTickets.Forms.MainForms
 
                     this.Controls.Add(type2);
                     this.Controls.Add(type3);
+                    
                 }
+
+               
 
                 bool d2 = projection.MovieType.Name == "2D" ? true : false;
                 int c = projection.MovieType.Name == "2D" ? d2Count : d3Count;
@@ -82,7 +93,8 @@ namespace CinemaTickets.Forms.MainForms
                 Label time = new Label();
                 time.AutoSize = false;
                 time.Cursor = Cursors.Hand;
-                time.BackColor = System.Drawing.SystemColors.AppWorkspace;
+                time.BackColor = System.Drawing.Color.DarkCyan;
+                time.ForeColor = System.Drawing.Color.White;
                 time.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
                 time.Location = new System.Drawing.Point(220 + c * 60, 380 + dateCount * 125 + (d2 ? 0 : 35));
                 time.Padding = new System.Windows.Forms.Padding(5);
@@ -117,6 +129,11 @@ namespace CinemaTickets.Forms.MainForms
 
             return date.DayOfWeek.ToString();
         }
-        
+
+        private void moviePicture_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(moviePicture, "Трейлър");
+        }
     }
 }

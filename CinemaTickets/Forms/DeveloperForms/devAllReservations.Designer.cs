@@ -28,73 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.reservationDataGrid = new System.Windows.Forms.DataGridView();
-            this.remReservation = new System.Windows.Forms.Button();
-            this.editReservation = new System.Windows.Forms.Button();
-            this.addReservation = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).BeginInit();
+            this.allReservationGrid = new System.Windows.Forms.DataGridView();
+            this.delReservations = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.allReservationGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // reservationDataGrid
+            // allReservationGrid
             // 
-            this.reservationDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reservationDataGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.reservationDataGrid.Location = new System.Drawing.Point(0, 141);
-            this.reservationDataGrid.Name = "reservationDataGrid";
-            this.reservationDataGrid.Size = new System.Drawing.Size(800, 309);
-            this.reservationDataGrid.TabIndex = 0;
+            this.allReservationGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.allReservationGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.allReservationGrid.Location = new System.Drawing.Point(0, 57);
+            this.allReservationGrid.Name = "allReservationGrid";
+            this.allReservationGrid.Size = new System.Drawing.Size(800, 393);
+            this.allReservationGrid.TabIndex = 0;
             // 
-            // remReservation
+            // delReservations
             // 
-            this.remReservation.Location = new System.Drawing.Point(12, 90);
-            this.remReservation.Name = "remReservation";
-            this.remReservation.Size = new System.Drawing.Size(167, 23);
-            this.remReservation.TabIndex = 7;
-            this.remReservation.Text = "Изтриване на резервация";
-            this.remReservation.UseVisualStyleBackColor = true;
-            this.remReservation.Click += new System.EventHandler(this.remReservation_Click);
-            // 
-            // editReservation
-            // 
-            this.editReservation.Location = new System.Drawing.Point(12, 61);
-            this.editReservation.Name = "editReservation";
-            this.editReservation.Size = new System.Drawing.Size(167, 23);
-            this.editReservation.TabIndex = 6;
-            this.editReservation.Text = "Промяна на резервация";
-            this.editReservation.UseVisualStyleBackColor = true;
-            this.editReservation.Click += new System.EventHandler(this.editReservation_Click);
-            // 
-            // addReservation
-            // 
-            this.addReservation.Location = new System.Drawing.Point(12, 32);
-            this.addReservation.Name = "addReservation";
-            this.addReservation.Size = new System.Drawing.Size(167, 23);
-            this.addReservation.TabIndex = 5;
-            this.addReservation.Text = "Добавяне на резервация";
-            this.addReservation.UseVisualStyleBackColor = true;
-            this.addReservation.Click += new System.EventHandler(this.addReservation_Click);
+            this.delReservations.Location = new System.Drawing.Point(12, 12);
+            this.delReservations.Name = "delReservations";
+            this.delReservations.Size = new System.Drawing.Size(75, 23);
+            this.delReservations.TabIndex = 1;
+            this.delReservations.Text = "Изтриване";
+            this.delReservations.UseVisualStyleBackColor = true;
+            this.delReservations.Click += new System.EventHandler(this.delReservations_Click);
             // 
             // devAllReservations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.remReservation);
-            this.Controls.Add(this.editReservation);
-            this.Controls.Add(this.addReservation);
-            this.Controls.Add(this.reservationDataGrid);
+            this.Controls.Add(this.delReservations);
+            this.Controls.Add(this.allReservationGrid);
             this.Name = "devAllReservations";
             this.Text = "devAllReservations";
-            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.allReservationGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView reservationDataGrid;
-        private System.Windows.Forms.Button remReservation;
-        private System.Windows.Forms.Button editReservation;
-        private System.Windows.Forms.Button addReservation;
+        private System.Windows.Forms.DataGridView allReservationGrid;
+        private System.Windows.Forms.Button delReservations;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(devAllMovies));
             this.dataGridAllMovies = new System.Windows.Forms.DataGridView();
             this.addMovie = new System.Windows.Forms.Button();
             this.editMovie = new System.Windows.Forms.Button();
@@ -91,8 +92,9 @@
             this.Controls.Add(this.editMovie);
             this.Controls.Add(this.addMovie);
             this.Controls.Add(this.dataGridAllMovies);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "devAllMovies";
-            this.Text = "devAllMovies";
+            this.Text = "Всички филми";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAllMovies)).EndInit();
             this.ResumeLayout(false);
 

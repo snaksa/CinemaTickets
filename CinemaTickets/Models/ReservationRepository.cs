@@ -12,6 +12,11 @@ namespace CinemaTickets.Models
             .ConnectionStrings["CinemaTicketsConnectionString"]
             .ConnectionString;
         
+
+
+
+
+
         public static void Add(int projectionId)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -49,6 +54,21 @@ namespace CinemaTickets.Models
             }
 
             return 0;
+        }
+
+        public static void Remove(int id)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand("DELETE FROM reservations WHERE id = @id", con))
+                {
+                    command.Parameters.Add("@id", SqlDbType.Int);
+                    command.Parameters["@id"].Value = id;
+
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
     }

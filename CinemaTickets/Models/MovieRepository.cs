@@ -151,10 +151,10 @@ namespace CinemaTickets.Models
             {
                 con.Open();
                 using (SqlCommand command = new SqlCommand(
-                    "UPDATE movies SET imgurl=@imgurl title = @title, subtitle = @subtitle, " +
+                    "UPDATE movies SET imgurl= @imgurl, title = @title, subtitle = @subtitle, " +
                     "description = @description, trailer_url = @trailer_url, " +
                     "category_id = @category_id, genre_id = @genre_id, duration = @duration, " +
-                    "producer = @producer, actors = @actors) " +
+                    "producer = @producer, actors = @actors " +
                     "WHERE id = @id", con))
                 {
                     command.Parameters.Add("@id", SqlDbType.Int);
@@ -163,7 +163,7 @@ namespace CinemaTickets.Models
                     command.Parameters["@imgurl"].Value = movie.ImgUrl;
                     command.Parameters.Add("@title", SqlDbType.NVarChar);
                     command.Parameters["@title"].Value = movie.Title;
-                    command.Parameters.Add("@name", SqlDbType.NVarChar);
+                    command.Parameters.Add("@subtitle", SqlDbType.NVarChar);
                     command.Parameters["@subtitle"].Value = movie.Subtitle;
                     command.Parameters.Add("@description", SqlDbType.NVarChar);
                     command.Parameters["@description"].Value = movie.Description;

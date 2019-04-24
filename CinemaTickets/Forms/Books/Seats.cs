@@ -34,10 +34,26 @@ namespace CinemaTickets.Forms
             screen.BackColor = System.Drawing.SystemColors.ControlLight;
             screen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             screen.Location = new System.Drawing.Point(20, 25);
-            screen.Size = new System.Drawing.Size(560, 5);
+            screen.Size = new System.Drawing.Size(340, 10);
             this.Controls.Add(screen);
 
-            List<Seat> seats = SeatRepository.GetByProjection(projectionId);
+            //stairs
+            int y1 = 0;
+            for(int i=0;i<4;i++)
+            {
+                PictureBox pb = new PictureBox();
+               
+                pb.Location = new System.Drawing.Point(320, 50 + y1);
+                y1 += 60;
+                pb.Size = new System.Drawing.Size(45, 45);
+                pb.Image = Image.FromFile("C:\\Users\\umruk\\Documents\\GitHub\\CinemaTickets\\CinemaTickets\\Images\\arrowwhite.png");
+                pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.Controls.Add(pb);
+            }
+
+
+
+            List <Seat> seats = SeatRepository.GetByProjection(projectionId);
 
             bool[] a = new bool[400];
             for (int i = 0; i < 400; i++) a[i] = true;
@@ -47,20 +63,22 @@ namespace CinemaTickets.Forms
             }
 
             // seats
-            int x = 30;
+            int x = 25;
             int y = 50;
             int count = 0;
-            for(int i = 0; i < 20; i++)
+            for(int i = 0; i < 8; i++)
             {
-                for (int j = 0; j < 20; j++)
+                for (int j = 0; j < 10; j++)
                 {
-                    if (j == 10) x += 40;
+                    //if (j == 10) x += 40;
 
                     Label lb = new Label();
-                    lb.BackColor = a[count] ? System.Drawing.SystemColors.ActiveCaption : System.Drawing.SystemColors.ControlDark;
+                    lb.BackColor = a[count] ? System.Drawing.SystemColors.ActiveCaption : System.Drawing.Color.Red;
                     lb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                    lb.Location = new System.Drawing.Point(x + j * 25, y + i * 25);
-                    lb.Size = new System.Drawing.Size(20, 20);
+                    lb.Location = new System.Drawing.Point(x + j * 30, y + i * 30);
+                    lb.Size = new System.Drawing.Size(25, 25);
+                    lb.Text = (count + 1).ToString();
+                    lb.TextAlign = ContentAlignment.MiddleCenter;
                     lb.Tag = count;
 
                     if (a[count])
@@ -73,7 +91,7 @@ namespace CinemaTickets.Forms
                     this.seats.Add(lb);
                     count++;
                 }
-                x = 30;
+                x = 25;
             }
         }
 
@@ -82,10 +100,11 @@ namespace CinemaTickets.Forms
             Label lb = (Label) sender;
             int index = Int32.Parse(lb.Tag.ToString());
 
-            if(this.seats[index].BackColor == System.Drawing.SystemColors.Desktop)
+            if(this.seats[index].BackColor == System.Drawing.Color.Green)
             {
                 this.seatsCount--;
                 this.seats[index].BackColor = System.Drawing.SystemColors.ActiveCaption;
+                this.seats[index].ForeColor = System.Drawing.Color.Black;
                 this.selectedSeats.Remove(index);
             }
             else
@@ -93,7 +112,8 @@ namespace CinemaTickets.Forms
                 if(this.seatsCount == this.maxSeats) return;
                 else
                 {
-                    this.seats[index].BackColor = System.Drawing.SystemColors.Desktop;
+                    this.seats[index].BackColor = System.Drawing.Color.Green;
+                    this.seats[index].ForeColor = System.Drawing.Color.White;
                     this.selectedSeats.Add(index);
                     this.seatsCount++;
                 }

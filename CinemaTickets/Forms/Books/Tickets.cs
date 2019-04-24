@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Net.Mail;
 using System.Windows.Forms;
 using CinemaTickets.Models;
 
@@ -14,7 +15,7 @@ namespace CinemaTickets.Forms.Books
         public Tickets(List<int> seats, SelectedSeats sCount, int projectionId)
         {
             InitializeComponent();
-
+            
             Projection projection = ProjectionRepository.Get(projectionId);
             this.projection = projection;
             this.seats = seats;
@@ -73,6 +74,29 @@ namespace CinemaTickets.Forms.Books
 
             MessageBox.Show("Резервацията е направена!", "Честито!");
             this.Hide();
+
+            string ticket = 
+            "Date: " +   projectionDate.Text + "\n" +
+            "Type: " +   projectionType.Text + "\n" +
+            "Room: " +   projectionRoom.Text + "\n" +
+            "Seats: " +  projectionSeats.Text + "\n" +
+            "Total: " +  projectionTotal.Text;
+
+           
+            try
+            {
+                MailMessage objMailMessage = new MailMessage("kinotopoli@gmail.com", emailTe.Text, "reservation", ticket);
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 587;
+                smtp.Credentials = new System.Net.NetworkCredential("kinotopoli@gmail.com", "kinotopoli123");
+                smtp.EnableSsl = true;
+                smtp.Send(objMailMessage);
+            }
+            catch(SmtpFailedRecipientException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
     }

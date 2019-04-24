@@ -48,7 +48,7 @@ namespace CinemaTickets.Forms
             this.genreId = genre.Id;
             setMovies(MovieRepository.GetAll(true, genre.Id));
             button1.Visible = true;
-            this.Size = new System.Drawing.Size(1013, 526);
+            this.Size = new System.Drawing.Size(928, 526);
             searchTextBox.Text = "";
         }
 
@@ -125,7 +125,7 @@ namespace CinemaTickets.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             button1.Visible = false;
-            this.Size = new System.Drawing.Size(1013, 700);
+            this.Size = new System.Drawing.Size(928, 750);
             this.setMovies(MovieRepository.GetAll(false, this.genreId));
         }
 
@@ -136,11 +136,11 @@ namespace CinemaTickets.Forms
             button1.Visible = false;
             if(movies.Count > 6)
             {
-                this.Size = new System.Drawing.Size(1013, 700);
+                this.Size = new System.Drawing.Size(928, 700);
             }
             else
             {
-                this.Size = new System.Drawing.Size(1013, 526);
+                this.Size = new System.Drawing.Size(928, 526);
             }
         }
     }

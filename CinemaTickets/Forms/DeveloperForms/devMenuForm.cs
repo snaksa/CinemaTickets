@@ -25,8 +25,14 @@ namespace CinemaTickets.Forms.DeveloperForms
 
         private void projectionButton_Click(object sender, EventArgs e)
         {
-            devAllReservations devAll = new devAllReservations();
+            devAllProjections devAll = new devAllProjections();
             devAll.Show();
+        }
+
+        private void devAllRbutton_Click(object sender, EventArgs e)
+        {
+            devAllReservations devAllReservations = new devAllReservations();
+            devAllReservations.Show();
         }
     }
 }

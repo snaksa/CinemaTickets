@@ -41,20 +41,24 @@
             // usnLabel
             // 
             this.usnLabel.AutoSize = true;
+            this.usnLabel.BackColor = System.Drawing.Color.White;
+            this.usnLabel.ForeColor = System.Drawing.Color.Black;
             this.usnLabel.Location = new System.Drawing.Point(19, 122);
             this.usnLabel.Name = "usnLabel";
-            this.usnLabel.Size = new System.Drawing.Size(58, 13);
+            this.usnLabel.Size = new System.Drawing.Size(32, 13);
             this.usnLabel.TabIndex = 0;
-            this.usnLabel.Text = "Username:";
+            this.usnLabel.Text = "Име:";
             // 
             // passLabel
             // 
             this.passLabel.AutoSize = true;
+            this.passLabel.BackColor = System.Drawing.Color.White;
+            this.passLabel.ForeColor = System.Drawing.Color.Black;
             this.passLabel.Location = new System.Drawing.Point(19, 151);
             this.passLabel.Name = "passLabel";
-            this.passLabel.Size = new System.Drawing.Size(56, 13);
+            this.passLabel.Size = new System.Drawing.Size(48, 13);
             this.passLabel.TabIndex = 1;
-            this.passLabel.Text = "Password:";
+            this.passLabel.Text = "Парола:";
             // 
             // username
             // 
@@ -82,6 +86,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(56, 13);
             this.pictureBox1.Name = "pictureBox1";
@@ -94,6 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(234, 211);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.devLogInButton);
@@ -101,8 +107,9 @@
             this.Controls.Add(this.username);
             this.Controls.Add(this.passLabel);
             this.Controls.Add(this.usnLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "devLogIn";
-            this.Text = "devLogIn";
+            this.Text = "Логин ";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
