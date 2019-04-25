@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Books\Tickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Books\Tickets.Designer.cs">
+      <DependentUpon>Tickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeveloperForms\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeveloperForms\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DeveloperForms\devLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,17 +77,17 @@
     <Compile Include="Forms\DeveloperForms\devSingleMovie.Designer.cs">
       <DependentUpon>devSingleMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DeveloperForms\devSingleProjection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeveloperForms\devSingleProjection.Designer.cs">
+      <DependentUpon>devSingleProjection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForms\SingleMovie.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MainForms\SingleMovie.Designer.cs">
       <DependentUpon>SingleMovie.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\АllMoviesForms\allMovies.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\АllMoviesForms\allMovies.Designer.cs">
-      <DependentUpon>allMovies.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Books\Book.cs">
       <SubType>Form</SubType>
@@ -95,19 +107,23 @@
     <Compile Include="Forms\DeveloperForms\devAllMovies.Designer.cs">
       <DependentUpon>devAllMovies.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DeveloperForms\devAllReservations.cs">
+    <Compile Include="Forms\DeveloperForms\devAllProjections.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DeveloperForms\devAllReservations.Designer.cs">
-      <DependentUpon>devAllReservations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Books\MovieForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Books\MovieForm.Designer.cs">
-      <DependentUpon>MovieForm.cs</DependentUpon>
+    <Compile Include="Forms\DeveloperForms\devAllProjections.Designer.cs">
+      <DependentUpon>devAllProjections.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\GenreOption.cs" />
+    <Compile Include="Models\Reservation.cs" />
+    <Compile Include="Models\ReservationRepository.cs" />
+    <Compile Include="Models\Seat.cs" />
+    <Compile Include="Models\SeatRepository.cs" />
+    <Compile Include="Models\SelectedSeats.cs" />
+    <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\TicketRepository.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Programa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +152,12 @@
     <Compile Include="Models\CategoryRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Books\Tickets.resx">
+      <DependentUpon>Tickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeveloperForms\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeveloperForms\devLogIn.resx">
       <DependentUpon>devLogIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,11 +167,11 @@
     <EmbeddedResource Include="Forms\DeveloperForms\devSingleMovie.resx">
       <DependentUpon>devSingleMovie.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeveloperForms\devSingleProjection.resx">
+      <DependentUpon>devSingleProjection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForms\SingleMovie.resx">
       <DependentUpon>SingleMovie.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\АllMoviesForms\allMovies.resx">
-      <DependentUpon>allMovies.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Books\Book.resx">
       <DependentUpon>Book.cs</DependentUpon>
@@ -157,14 +179,11 @@
     <EmbeddedResource Include="Forms\DeveloperForms\devAllMovies.resx">
       <DependentUpon>devAllMovies.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DeveloperForms\devAllReservations.resx">
-      <DependentUpon>devAllReservations.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\DeveloperForms\devAllProjections.resx">
+      <DependentUpon>devAllProjections.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Books\MovieForm.resx">
-      <DependentUpon>MovieForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Books\Seats.resx">
       <DependentUpon>Seats.cs</DependentUpon>
@@ -180,7 +199,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="bin\Debug\CinemaTickets.exe.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="obj\Release\CinemaTickets.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Release\CinemaTickets.csproj.ResolveComReference.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -213,12 +237,32 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Images\cooltext321919124763215.png" />
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\AxInterop.ShockwaveFlashObjects.dll" />
+    <Content Include="bin\Debug\CinemaTickets.exe" />
+    <Content Include="bin\Debug\CinemaTickets.pdb" />
+    <Content Include="bin\Debug\Images\cooltext321919124763215.png" />
+    <Content Include="bin\Debug\Images\loader.gif" />
+    <Content Include="bin\Debug\Images\logo.png" />
+    <Content Include="bin\Debug\Images\seat.png" />
+    <Content Include="bin\Debug\Images\seatFree.png" />
+    <Content Include="bin\Debug\Images\seatTaken.png" />
+    <Content Include="bin\Debug\Interop.ShockwaveFlashObjects.dll" />
+    <Content Include="Images\arrowwhite.png" />
     <Content Include="Images\Developerpng.png" />
+    <Content Include="Images\icons8-about-48.png" />
+    <Content Include="Images\Icons8-Ios7-Cinema-Add-Ticket.ico" />
+    <Content Include="Images\Icons8-Ios7-Cinema-Documentary.ico" />
+    <Content Include="Images\Icons8-Ios7-Cinema-Imdb.ico" />
+    <Content Include="Images\Iconsmind-Outline-Cinema.ico" />
     <Content Include="Images\loader.gif" />
-    <Content Include="Images\logo.png" />
+    <Content Include="Images\login.png" />
+    <Content Include="Images\Untitled-1.png" />
+    <Content Include="obj\Release\AxInterop.ShockwaveFlashObjects.dll" />
+    <Content Include="obj\Release\Interop.ShockwaveFlashObjects.dll" />
     <Content Include="Recources\icons8-unavailable-filled-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
