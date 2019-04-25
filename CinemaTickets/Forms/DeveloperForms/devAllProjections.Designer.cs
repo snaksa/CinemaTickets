@@ -38,6 +38,7 @@
             // 
             // reservationDataGrid
             // 
+            this.reservationDataGrid.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.reservationDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reservationDataGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.reservationDataGrid.Location = new System.Drawing.Point(0, 141);
@@ -79,6 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.remReservation);
             this.Controls.Add(this.editReservation);

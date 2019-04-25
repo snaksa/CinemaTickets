@@ -4,18 +4,17 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using CinemaTickets.Forms.MainForms;
+using CinemaTickets.Forms.DeveloperForms;
 
 namespace CinemaTickets.Forms
 {
     public partial class Main : Form
     {
         private devLogIn dlogin;
-        private Programa prog;
-        private allMovies allm;
+        private About ab;
         private int genreId = 0;
 
         List<Label> movieLabels;
-        List<Label> movieLabelsMore;
         List<PictureBox> moviePictues;
         List<Movie> allMovies;
 
@@ -23,7 +22,6 @@ namespace CinemaTickets.Forms
         {
             InitializeComponent();
             movieLabels = new List<Label>();
-            movieLabelsMore = new List<Label>();
             moviePictues = new List<PictureBox>();
         }
 
@@ -47,7 +45,7 @@ namespace CinemaTickets.Forms
             GenreOption genre = (GenreOption)comboBox.SelectedItem;
             this.genreId = genre.Id;
             setMovies(MovieRepository.GetAll(true, genre.Id));
-            button1.Visible = true;
+            aMovies.Visible = true;
             this.Size = new System.Drawing.Size(928, 526);
             searchTextBox.Text = "";
         }
@@ -122,9 +120,9 @@ namespace CinemaTickets.Forms
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void aMovies_Click(object sender, EventArgs e)
         {
-            button1.Visible = false;
+            aMovies.Visible = false;
             this.Size = new System.Drawing.Size(928, 750);
             this.setMovies(MovieRepository.GetAll(false, this.genreId));
         }
@@ -133,7 +131,7 @@ namespace CinemaTickets.Forms
         {
             List<Movie> movies =MovieRepository.GetAll(false, this.genreId, searchTextBox.Text);
             this.setMovies(movies);
-            button1.Visible = false;
+            aMovies.Visible = false;
             if(movies.Count > 6)
             {
                 this.Size = new System.Drawing.Size(928, 700);
@@ -142,6 +140,12 @@ namespace CinemaTickets.Forms
             {
                 this.Size = new System.Drawing.Size(928, 526);
             }
+        }
+
+        private void about_Click(object sender, EventArgs e)
+        {
+            ab = new About();
+            ab.Show();
         }
     }
 }

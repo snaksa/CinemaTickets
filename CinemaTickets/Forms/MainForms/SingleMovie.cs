@@ -99,7 +99,7 @@ namespace CinemaTickets.Forms.MainForms
                 time.Location = new System.Drawing.Point(220 + c * 60, 380 + dateCount * 125 + (d2 ? 0 : 35));
                 time.Padding = new System.Windows.Forms.Padding(5);
                 time.Size = new System.Drawing.Size(56, 29);
-                time.Text = projection.Time.TimeOfDay.ToString();
+                time.Text = projection.Time.ToShortTimeString();
                 time.Tag = projection.Id;
                 time.Click += (object sender, EventArgs e) => this.handleClickProjection(sender, e);
 
@@ -130,10 +130,6 @@ namespace CinemaTickets.Forms.MainForms
             return date.DayOfWeek.ToString();
         }
 
-        private void moviePicture_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(moviePicture, "Трейлър");
-        }
+        
     }
 }

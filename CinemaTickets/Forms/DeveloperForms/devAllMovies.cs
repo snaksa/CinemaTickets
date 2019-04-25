@@ -46,12 +46,7 @@ namespace CinemaTickets.Forms
                     DataTable table = new DataTable();
                     adapter.Fill(table);
                     
-                    //foreach (DataRow rw in table.Rows)
-                    {
-                        //dataGridAllMovies.RowTemplate.MinimumHeight = 50;
-                        //posterImage.Image = GetImageFromUrl(rw[1].ToString());
-                        
-                    }
+                   
                     dataGridAllMovies.DataSource = table;
                     
                     

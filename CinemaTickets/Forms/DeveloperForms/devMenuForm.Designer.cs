@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(devMenuForm));
             this.moviesButton = new System.Windows.Forms.Button();
             this.projectionButton = new System.Windows.Forms.Button();
-            this.devAllRbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // moviesButton
@@ -54,22 +53,12 @@
             this.projectionButton.UseVisualStyleBackColor = true;
             this.projectionButton.Click += new System.EventHandler(this.projectionButton_Click);
             // 
-            // devAllRbutton
-            // 
-            this.devAllRbutton.Location = new System.Drawing.Point(13, 112);
-            this.devAllRbutton.Name = "devAllRbutton";
-            this.devAllRbutton.Size = new System.Drawing.Size(82, 23);
-            this.devAllRbutton.TabIndex = 2;
-            this.devAllRbutton.Text = "Резервации";
-            this.devAllRbutton.UseVisualStyleBackColor = true;
-            this.devAllRbutton.Click += new System.EventHandler(this.devAllRbutton_Click);
-            // 
             // devMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(148, 182);
-            this.Controls.Add(this.devAllRbutton);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(190, 133);
             this.Controls.Add(this.projectionButton);
             this.Controls.Add(this.moviesButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -83,6 +72,5 @@
 
         private System.Windows.Forms.Button moviesButton;
         private System.Windows.Forms.Button projectionButton;
-        private System.Windows.Forms.Button devAllRbutton;
     }
 }

@@ -122,7 +122,7 @@ namespace CinemaTickets.Forms
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void saveButton_Click(object sender, EventArgs e)
         {
             if(this.seatsCount != this.maxSeats)
             {

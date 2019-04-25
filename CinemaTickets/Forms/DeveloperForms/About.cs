@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CinemaTickets.Forms
+namespace CinemaTickets.Forms.DeveloperForms
 {
-    public partial class MovieForm : Form
+    public partial class About : Form
     {
-        private Book bk;
-        public MovieForm()
+        public About()
         {
             InitializeComponent();
         }
 
-        private void book_Click(object sender, EventArgs e)
+        private void submit_Click(object sender, EventArgs e)
         {
+            this.Close();
         }
     }
 }

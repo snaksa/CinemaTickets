@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CinemaTickets.Forms.devAllMovies" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgDAQgCAAAAAAABiACAACAAAgAAAAAAAAAgAACAA=</HashCode>
+      <FileName>Forms\DeveloperForms\devAllMovies.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Forms.DeveloperForms.devAllProjections" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgCAQACAQAAAAAACAAAACAAABAAAAQAABAAAAAgI=</HashCode>
+      <FileName>Forms\DeveloperForms\devAllProjections.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Forms.devLogIn" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IABAAAAAACAAAAAIAACAAAECAAAAAAAAAQAAAgBAAAA=</HashCode>
+      <FileName>Forms\DeveloperForms\devLogIn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Forms.DeveloperForms.devMenuForm" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAKAAAAAAAACAAAACAAAAAEAAAAAAAAEAAAA=</HashCode>
+      <FileName>Forms\DeveloperForms\devMenuForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Forms.DeveloperForms.devSingleMovie" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAQCAAQBAAAACBAAASAACLgAAAAEAAQAIAIgA=</HashCode>
+      <FileName>Forms\DeveloperForms\devSingleMovie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Forms.DeveloperForms.devSingleProjection" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAgCAQBBACABKAAAACAAAAAAAAAAAAAICAAgA=</HashCode>
+      <FileName>Forms\DeveloperForms\devSingleProjection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Forms.Book" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQgAAAECAAoAABQACAAAIiAAQAAAIAQAAAAAAAAAA=</HashCode>
+      <FileName>Forms\Books\Book.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Forms.Seats" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAACICAAAhAAAACAQAICAAAIAAAAAAAAQAAAAAE=</HashCode>
+      <FileName>Forms\Books\Seats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Forms.Books.Tickets" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBAQAAACACCAABEABSCIAkIiAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forms\Books\Tickets.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Forms.Main" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIgABAIkIWAAABAAAAiAAAACAACQgAAAAAAACABAAAA=</HashCode>
+      <FileName>Forms\MainForms\Main.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Forms.MainForms.SingleMovie" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAQAAACAAIBAAAAiIAAAiAAAAAAAECEAAAQAAAAA=</HashCode>
+      <FileName>Forms\MainForms\SingleMovie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.Category" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.CategoryRepository" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAhAAAAABAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\CategoryRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.Genre" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Genre.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.GenreOption" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Models\GenreOption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.GenreRepository" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAhAAAAABAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\GenreRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.Movie" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAigEAAQAIQAAAAAAgQAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Models\Movie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.MovieRepository" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAhAAAAABAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\MovieRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.MovieType" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\MovieType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.MovieTypeRepository" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAhAAAAABAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\MovieTypeRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.Projection" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAEAAAABAAAAAAAAAAAAgAAAAAAAAAAQA=</HashCode>
+      <FileName>Models\Projection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.ProjectionRepository" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAhAAAAABAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\ProjectionRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.Reservation" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Models\Reservation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.ReservationRepository" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAgAAAAABCAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ReservationRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.Room" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Room.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.RoomRepository" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAhAAAAABAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\RoomRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.Seat" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAiAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Seat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.SeatRepository" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAgAAAAAAAEAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\SeatRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.SelectedSeats" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Models\SelectedSeats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.Ticket" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAEAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Models\Ticket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.TicketRepository" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAgAAAAAACAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\TicketRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.TicketType" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\TicketType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CinemaTickets.Models.TicketTypeRepository" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAhAAAAABAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\TicketTypeRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

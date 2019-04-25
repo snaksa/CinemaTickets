@@ -53,7 +53,6 @@
             this.moviePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.moviePicture.TabIndex = 0;
             this.moviePicture.TabStop = false;
-            this.moviePicture.MouseHover += new System.EventHandler(this.moviePicture_MouseHover);
             // 
             // movieDescription
             // 

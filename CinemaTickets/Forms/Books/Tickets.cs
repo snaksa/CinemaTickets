@@ -76,11 +76,12 @@ namespace CinemaTickets.Forms.Books
             this.Hide();
 
             string ticket = 
-            "Date: " +   projectionDate.Text + "\n" +
-            "Type: " +   projectionType.Text + "\n" +
-            "Room: " +   projectionRoom.Text + "\n" +
-            "Seats: " +  projectionSeats.Text + "\n" +
-            "Total: " +  projectionTotal.Text;
+            "Дата: " +   projectionDate.Text + "\n" +
+            "Филм: " + projection.Movie.Title + "\n" +
+            "Тип: " +   projectionType.Text + "\n" +
+            "Зала: " +   projectionRoom.Text + "\n" +
+            "Места: " +  projectionSeats.Text + "\n" +
+            "Общо: " +  projectionTotal.Text;
 
            
             try

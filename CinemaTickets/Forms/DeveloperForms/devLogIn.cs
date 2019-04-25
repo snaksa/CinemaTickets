@@ -23,17 +23,17 @@ namespace CinemaTickets.Forms
 
         private void devLogInButton_Click(object sender, EventArgs e)
         {
-            //if (username.Text == "admin" && password.Text == "pass")
+            if (username.Text == "admin" && password.Text == "pass")
 
-            //{
+            {
                 devMenuForm dmf = new devMenuForm();
                 dmf.Show();
             this.Hide();
-            //}
-           // else
-           // {
-               // MessageBox.Show("Vyvedeni sa greshni danni");
-            //}
+            }
+            else
+           {
+                MessageBox.Show("Въведени са грешни данни");
+            }
 
         }
     }
