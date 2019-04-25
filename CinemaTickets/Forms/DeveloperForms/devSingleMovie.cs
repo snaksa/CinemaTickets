@@ -64,16 +64,57 @@ namespace CinemaTickets.Forms.DeveloperForms
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            Movie m = new Movie(this.id, posterUrlTextBox.Text, titleTextBox.Text, 
-                subTitleTextBox.Text, descriptionTextBox.Text, trailerUrlTextBox.Text, 
-                this.categories[categoriesComboBox.SelectedIndex], 
-                this.genres[genresComboBox.SelectedIndex], Int32.Parse(durationTextBox.Text), 
-                producerTextBox.Text, actorsTextBox.Text);
+            bool error = false;
+            if(titleTextBox.Text.Length <= 0)
+            {
+                error = true;
+            }       
+             if(subTitleTextBox.Text.Length <= 0)
+            {
+                error = true;
+            }
+            
+              if(subTitleTextBox.Text.Length <=0)
+            {
+                error = true;
+            }
+              if(descriptionTextBox.Text.Length <= 0)
+            {
+                error = true;
+            }
+            if (durationTextBox.Text.Length <= 0)
+            {
+                error = true;
+            }
+            if (actorsTextBox.Text.Length <= 0)
+            {
+                error = true;
+            }
+            if (posterUrlTextBox.Text.Length <= 0)
+            {
+                error = true;
+            }
+            if (trailerUrlTextBox.Text.Length <= 0)
+            {
+                error = true;
+            }
+            if(error == true)
+            {
+                MessageBox.Show("Въведете данни", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Movie m = new Movie(this.id, posterUrlTextBox.Text, titleTextBox.Text,
+                    subTitleTextBox.Text, descriptionTextBox.Text, trailerUrlTextBox.Text,
+                    this.categories[categoriesComboBox.SelectedIndex],
+                    this.genres[genresComboBox.SelectedIndex], Int32.Parse(durationTextBox.Text),
+                    producerTextBox.Text, actorsTextBox.Text);
 
-            if (m.Id == 0) MovieRepository.Add(m);
-            else MovieRepository.Update(m);
+                if (m.Id == 0) MovieRepository.Add(m);
+                else MovieRepository.Update(m);
 
-            this.Close();
+                this.Close();
+            }
         }
     }
     }

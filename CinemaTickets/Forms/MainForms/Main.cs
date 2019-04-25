@@ -129,16 +129,23 @@ namespace CinemaTickets.Forms
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            List<Movie> movies =MovieRepository.GetAll(false, this.genreId, searchTextBox.Text);
-            this.setMovies(movies);
-            aMovies.Visible = false;
-            if(movies.Count > 6)
+            if (searchTextBox.Text.Length <= 0)
             {
-                this.Size = new System.Drawing.Size(928, 700);
+                MessageBox.Show("Очаква се име", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                this.Size = new System.Drawing.Size(928, 566);
+                List<Movie> movies = MovieRepository.GetAll(false, this.genreId, searchTextBox.Text);
+                this.setMovies(movies);
+                aMovies.Visible = false;
+                if (movies.Count > 6)
+                {
+                    this.Size = new System.Drawing.Size(928, 700);
+                }
+                else
+                {
+                    this.Size = new System.Drawing.Size(928, 566);
+                }
             }
         }
 

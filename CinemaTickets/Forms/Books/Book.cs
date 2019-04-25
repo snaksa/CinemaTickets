@@ -30,13 +30,20 @@ namespace CinemaTickets.Forms
 
         private void seats_Click(object sender, EventArgs e)
         {
-            int standard = (int) ticketStandard.Value;
-            int elder = (int) ticketElder.Value;
-            int student = (int) ticketStudent.Value;
-            SelectedSeats selected = new SelectedSeats(standard, elder, student);
-            Seats seats = new Seats(this.projectionId, selected);
-            seats.Show();
-            this.Hide();
+            if (ticketStandard.Value == 0 && ticketStudent.Value == 0 && ticketElder.Value == 0)
+            {
+                MessageBox.Show("Очаква се избор на билет", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                int standard = (int)ticketStandard.Value;
+                int elder = (int)ticketElder.Value;
+                int student = (int)ticketStudent.Value;
+                SelectedSeats selected = new SelectedSeats(standard, elder, student);
+                Seats seats = new Seats(this.projectionId, selected);
+                seats.Show();
+                this.Hide();
+            }
         }
     }
 }

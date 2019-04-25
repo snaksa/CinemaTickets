@@ -15,7 +15,7 @@ namespace CinemaTickets.Forms.Books
         public Tickets(List<int> seats, SelectedSeats sCount, int projectionId)
         {
             InitializeComponent();
-            
+
             Projection projection = ProjectionRepository.Get(projectionId);
             this.projection = projection;
             this.seats = seats;
@@ -30,11 +30,11 @@ namespace CinemaTickets.Forms.Books
             projectionType.Text = projection.MovieType.Name;
             projectionRoom.Text = projection.Room.Name;
             string seatsText = "";
-            for(int i = 0; i < seats.Count; i++)
+            for (int i = 0; i < seats.Count; i++)
                 seatsText += seats[i] + (i != seats.Count - 1 ? ", " : "");
 
             projectionSeats.Text = seatsText;
-            
+
             int typePrice = projection.MovieType.Price;
             int sum = sCount.Standard * typePrice;
             sum += sCount.Student * (typePrice - 3);
@@ -48,7 +48,7 @@ namespace CinemaTickets.Forms.Books
             ReservationRepository.Add(this.projection.Id);
             int resId = ReservationRepository.GetLatest();
 
-            for(int i = 0; i < this.selectedCount.Standard; i++)
+            for (int i = 0; i < this.selectedCount.Standard; i++)
             {
                 TicketRepository.Add(resId);
                 int ticketId = TicketRepository.GetLatest();
@@ -73,18 +73,22 @@ namespace CinemaTickets.Forms.Books
             }
 
             MessageBox.Show("Резервацията е направена!", "Честито!");
-            this.Hide();
+            
 
-            string ticket = 
-            "Дата: " +   projectionDate.Text + "\n" +
+            string ticket =
+            "Дата: " + projectionDate.Text + "\n" +
             "Филм: " + projection.Movie.Title + "\n" +
-            "Тип: " +   projectionType.Text + "\n" +
-            "Зала: " +   projectionRoom.Text + "\n" +
-            "Места: " +  projectionSeats.Text + "\n" +
-            "Общо: " +  projectionTotal.Text;
+            "Тип: " + projectionType.Text + "\n" +
+            "Зала: " + projectionRoom.Text + "\n" +
+            "Места: " + projectionSeats.Text + "\n" +
+            "Общо: " + projectionTotal.Text;
 
-           
-            try
+
+            if (emailTe.Text.Length <= 0)
+            {
+                this.Hide();
+            }
+            else
             {
                 MailMessage objMailMessage = new MailMessage("kinotopoli@gmail.com", emailTe.Text, "reservation", ticket);
                 SmtpClient smtp = new SmtpClient();
@@ -93,12 +97,32 @@ namespace CinemaTickets.Forms.Books
                 smtp.Credentials = new System.Net.NetworkCredential("kinotopoli@gmail.com", "kinotopoli123");
                 smtp.EnableSsl = true;
                 smtp.Send(objMailMessage);
+                this.Hide();
             }
-            catch(SmtpFailedRecipientException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
+           
 
+        }
+
+        private void emailTe_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Text.RegularExpressions.Regex rEMail = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
+
+            if (emailTe.Text.Length > 0)
+
+            {
+
+                if (!rEMail.IsMatch(emailTe.Text))
+
+                {
+
+                    MessageBox.Show("Очаква се валиден имейл", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    emailTe.SelectAll();
+
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }
