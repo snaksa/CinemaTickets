@@ -46,7 +46,7 @@ namespace CinemaTickets.Forms
                 pb.Location = new System.Drawing.Point(320, 50 + y1);
                 y1 += 60;
                 pb.Size = new System.Drawing.Size(45, 45);
-                pb.Image = Image.FromFile("C:\\Users\\umruk\\Documents\\GitHub\\CinemaTickets\\CinemaTickets\\Images\\arrowwhite.png");
+                pb.Image = Image.FromFile(@"Images\arrowwhite.png");
                 pb.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Controls.Add(pb);
             }

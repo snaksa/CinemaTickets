@@ -35,9 +35,10 @@
             // 
             // submit
             // 
-            this.submit.Location = new System.Drawing.Point(67, 115);
+            this.submit.Location = new System.Drawing.Point(89, 142);
+            this.submit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.submit.Name = "submit";
-            this.submit.Size = new System.Drawing.Size(75, 23);
+            this.submit.Size = new System.Drawing.Size(100, 28);
             this.submit.TabIndex = 0;
             this.submit.Text = "Ок";
             this.submit.UseVisualStyleBackColor = true;
@@ -45,22 +46,24 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(12, 20);
+            this.label1.Location = new System.Drawing.Point(16, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 76);
+            this.label1.Size = new System.Drawing.Size(255, 94);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Програмата е създадена с цел - задание към Универститет. Изготвили заданието са С" +
-    "инан Зикри ФК:61662174 и Динко Динков ФН 61662171.";
+            this.label1.Text = "Програмата е създадена с цел - задание към ТУ - Варна. Изготвили заданието са Син" +
+    "ан Шабан ФК:61662174 и Динко Динков ФН 61662171.";
             // 
             // About
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(231, 165);
+            this.ClientSize = new System.Drawing.Size(308, 203);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.submit);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "About";
             this.Text = "Информация";
             this.ResumeLayout(false);
